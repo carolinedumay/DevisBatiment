@@ -58,5 +58,5 @@ public class DevisBatiment {
          //System.out.println(m1.toString()+"\nSurface :"+m1.surface());
          System.out.format("\nSurface :%.2f",m1.surface());
          //AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHHHHHHHHHHHHHHHHHH
-    }
+    }//salut
  }
