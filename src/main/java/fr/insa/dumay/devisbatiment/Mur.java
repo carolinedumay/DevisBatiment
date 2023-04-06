@@ -39,6 +39,8 @@ public class Mur {
         double hsp=Lire.d();
         return(this.longueur()*hsp);
     }
-
-    
+//nbrePortes : int 
+//nbreFenetres :int 
+//listeRevetements: List 
+//montantRevetement()
 }
