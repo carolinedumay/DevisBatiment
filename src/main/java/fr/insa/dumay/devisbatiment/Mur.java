@@ -10,9 +10,12 @@ package fr.insa.dumay.devisbatiment;
  */
 public class Mur {
     
+    
     // Attributs
     int idMur;
     Coin debut, fin;
+    int nbPortes;
+    int nbFenetres;
     
     // Constructeur
     Mur(int id, Coin dc, Coin fc)
