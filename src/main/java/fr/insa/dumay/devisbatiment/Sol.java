@@ -19,11 +19,14 @@ public class Sol {
     ArrayList<Coin> listecoins = new ArrayList<Coin>();
  
     //constructeurs
-    Sol(int id, listecoins) {
+    Sol(int id) {
         this.idSol = id;
         
     }
     void afficher()
     {System.out.println("==== Sol =====");
     }
+    
+    double surface()
+    {}
 }

@@ -18,5 +18,6 @@ public class Revêtement {
     boolean pourPlafond;
     double prixUnitaire;
     
+    //constructeur 
     
 }

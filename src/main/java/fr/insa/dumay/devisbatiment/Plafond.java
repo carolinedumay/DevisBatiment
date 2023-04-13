@@ -4,6 +4,8 @@
  */
 package fr.insa.dumay.devisbatiment;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author caroo
@@ -12,7 +14,10 @@ public class Plafond {
     
     //attributs
     int idPlafond; 
+    ArrayList<Coin> listecoins = new ArrayList<Coin>();
     
     //constructeurs
-    void afficher(){}
+    Plafond(int id;)
+    
+    double surface(){}
 }
