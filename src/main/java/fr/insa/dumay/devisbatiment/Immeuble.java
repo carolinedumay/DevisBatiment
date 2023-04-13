@@ -5,12 +5,19 @@
 package fr.insa.dumay.devisbatiment;
 
 /**
- *
+ *[{}]
  * @author mfanget01
  */
 public class Immeuble extends Batiment{
     /// Attributs ///
+    String idImmeuble;
     
     
-    
+    Immeuble(String ID,int a)
+    {
+        super(ID);
+        this.idImmeuble= ID;
+    }
+            
+            
 }

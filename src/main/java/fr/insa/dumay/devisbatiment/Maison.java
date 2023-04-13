@@ -10,6 +10,13 @@ package fr.insa.dumay.devisbatiment;
  */
 public class Maison extends Batiment {
     /// Attributs ///
+       String idMaison;
     
+    
+    Maison(String ID)
+    {
+        super(ID);
+        this.idMaison= ID;
+    }
     
 }

@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package fr.insa.dumay.devisbatiment;
-
+import java.util.ArrayList;
 /**
  *
  * @author mfanget01
@@ -12,7 +12,7 @@ public class Appartement {
     /// Attributs ///
     int idAppartement;
     int idNiveauAppartement;
-    //Piece listePieces[];
+    ArrayList<Piece> listePieces;
     
     /// Constructeur ///
     Appartement(int IDA, int IDN)
