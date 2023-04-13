@@ -8,11 +8,29 @@ package fr.insa.dumay.devisbatiment;
  * @author juliette
  */
 public class Ouverture {
- 
+///comment faire choisir à l'utlisateur fenetre ou porte ?
     //Attribut
-                
-    //Constructeur
+    int idOuverture;
+    double dimX;
+    double dimY;
+            
+    //Conctructeurs
+    Ouverture (int id, double x, double y)
+    {
+    this.idOuverture=id;
+    this.dimX=x;
+    this.dimY=y;
+    }
     
-    //Methodes
+    //Méthodes
+    void afficher()
+    {
+        //System.out.println(" Ouverture : id ="+this.idOuverture+" largueur = "+this.dimX+ " hauteur ="+this.dimY);
+    }
+        
+    double surface()
+    {
+        return((this.dimX)*(this.dimY));
+    }
+    }
     
-}

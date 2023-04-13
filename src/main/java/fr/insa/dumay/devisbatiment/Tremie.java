@@ -1,38 +1,39 @@
+package fr.insa.dumay.devisbatiment;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package fr.insa.dumay.devisbatiment;
 
 /**
  *
  * @author juliette
  */
-public class Porte extends Ouverture{
-    
+public class Tremie extends Ouverture{
     //Attribut
-    int idPorte;
+    int idTremie;
     double largeur;
     double hauteur;
             
     //Conctructeurs
-    Porte (int id, double x, double y)
+    Tremie (int id, double x, double y)
     {
-        super (id, x, y);
-        /*
-    this.idPorte=id;
+        super(id,x,y);
+    /*        
+    this.idTremie=id;
     this.largeur=x;
-    this.hauteur=y; */
+    this.hauteur=y;*/
     }
     
     //Méthodes
     void afficher()
     {
-        System.out.println(" Porte : id ="+this.idPorte+" largueur = "+this.largeur+ " longueur ="+this.hauteur);
+        System.out.println(" Tremie : id ="+this.idTremie+" largueur = "+this.largeur+ " hauteur ="+this.hauteur);
     }
         
-    double surface()
+   /* double surface()
     {
         return((this.largeur)*(this.hauteur));
-    }
-    }
+    }*/
+    
+}

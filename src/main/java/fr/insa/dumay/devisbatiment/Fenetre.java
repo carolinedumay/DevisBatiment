@@ -8,8 +8,8 @@ package fr.insa.dumay.devisbatiment;
  *
  * @author juliette
  */
-public class Fenetre {
-    //Fenetre extends Ouverture; ??
+public class Fenetre extends Ouverture{
+    /// On met RIEN d'autre ? On garde tout sauf le calcul qu'est déjà dans Ouverture
     
     //Attribut
     int idFenetre;
@@ -19,9 +19,11 @@ public class Fenetre {
     //Conctructeurs
     Fenetre (int id, double x, double y)
     {
+        super(id,x,y);
+    /*        
     this.idFenetre=id;
     this.largeur=x;
-    this.hauteur=y;
+    this.hauteur=y;*/
     }
     
     //Méthodes
@@ -30,8 +32,8 @@ public class Fenetre {
         System.out.println(" Fenetre : id ="+this.idFenetre+" largueur = "+this.largeur+ " hauteur ="+this.hauteur);
     }
         
-    double surface()
+   /* double surface()
     {
         return((this.largeur)*(this.hauteur));
-    }
+    }*/
     }
