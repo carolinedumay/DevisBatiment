@@ -42,9 +42,9 @@ public class DevisBatiment {
          m1.afficher();
 
          System.out.println("Longueur du mur ="+m1.longueur());
-         
+        
          //Formattage de l'affichage
-         System.out.format("\nLongueur du mur =%.2f",m1.longueur());
+       System.out.format("\nLongueur du mur =%.2f",m1.longueur());  
 //         System.out.printf("\nLongueur du mur =%.3f\n",m1.longueur());
  /*         
 // Exemple         

@@ -9,10 +9,12 @@ package fr.insa.dumay.devisbatiment;
  * @author Amadou Coulibaly
  */
 public class Coin {
+    
     // Attributs
     int idCoin;
     double cx;
     double cy;
+    
     // Constructeur
     Coin(int id, double x, double y)
     {

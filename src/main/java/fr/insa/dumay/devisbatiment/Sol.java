@@ -4,6 +4,10 @@
  */
 package fr.insa.dumay.devisbatiment;
 
+import java.util.ArrayList;
+
+
+
 /**
  *
  * @author caroo
@@ -12,8 +16,17 @@ public class Sol {
     
     //attributs
     int idSol;
+    ArrayList<Coin> listecoins = new ArrayList<Coin>();
  
     //constructeurs
-    void afficher(){}
+    Sol(int id) {
+        this.idSol = id;
+        
+    }
+    void afficher()
+    {System.out.println("==== Sol =====");
+    }
     
+    double surface()
+    {}
 }
