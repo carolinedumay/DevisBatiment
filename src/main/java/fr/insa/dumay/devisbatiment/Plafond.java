@@ -4,20 +4,38 @@
  */
 package fr.insa.dumay.devisbatiment;
 
-import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
  * @author caroo
  */
+
 public class Plafond {
     
-    //attributs
-    int idPlafond; 
-    ArrayList<Coin> listecoins = new ArrayList<Coin>();
+    // Attributs
+    int idPlafond;
+    List<Coin> listeCoins;
+    List<Revêtement> listeRevetements;
     
-    //constructeurs
-    Plafond(int id;)
+    // Constructeur
+    public Plafond(int idPlafond, List<Coin> listeCoins, List<Revêtement> listeRevetements) {
+        this.idPlafond = idPlafond;
+        this.listeCoins = listeCoins;
+        this.listeRevetements = listeRevetements;
+    }
     
-    double surface(){}
+    // Méthode pour calculer la surface du plafond
+    public double surface() {}
+    
+    // Méthode pour afficher les informations sur le plafond
+    public String ToString() {
+        String infop = "Plafond " + idPlafond + "\n:Coins :";
+        for (Coin coin : listeCoins) {
+            infop = infop + "  " + coin + " \n ";
+        }
+        infop = infop + "Revetements : " + listeRevetements + "\n";
+        infop = infop + "Surface : " + surface() + " m²\n";
+        return infop;
+    }
 }

@@ -4,29 +4,42 @@
  */
 package fr.insa.dumay.devisbatiment;
 
-import java.util.ArrayList;
-
-
-
+import java.util.List;
 /**
  *
  * @author caroo
  */
+
 public class Sol {
     
-    //attributs
+    // Attributs
     int idSol;
-    ArrayList<Coin> listecoins = new ArrayList<Coin>();
- 
-    //constructeurs
-    Sol(int id) {
+    List<Coin> listeCoin;
+    List<Revêtement> listeRevetements;
+    
+    // Constructeur
+    public Sol(int id, List<Coin> coins, List<Revêtement> revetements) {
         this.idSol = id;
-        
-    }
-    void afficher()
-    {System.out.println("==== Sol =====");
+        this.listeCoin = coins;
+        this.listeRevetements = revetements;
     }
     
-    double surface()
-    {}
-}
+    // Méthodes
+    public void Afficher() {
+        System.out.println("---- Sol ----");
+        for (Coin c : this.listeCoin) {
+            c.afficher();
+        }
+    }
+    
+    public String ToString() {
+        String result = "Sol " + this.idSol + " : ";
+        for (Coin c : this.listeCoin) {
+            result = result + "(" + c.cx + ", " + c.cy + ") ";
+        }
+        return result;
+    }
+    
+    public double Surface() {}
+  
+    }
