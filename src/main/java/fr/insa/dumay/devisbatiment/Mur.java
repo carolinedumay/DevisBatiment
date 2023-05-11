@@ -6,7 +6,7 @@ package fr.insa.dumay.devisbatiment;
 
 /**
  *
- * @author Amadou Coulibaly
+ * @author cdumay01
  */
 public class Mur {
     

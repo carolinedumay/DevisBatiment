@@ -28,6 +28,22 @@ public class Plafond {
     // Méthode pour calculer la surface du plafond
     public double surface() 
     {
+        double a = Math.sqrt((Math.pow(listeCoins.get(0).cx - listeCoins.get(1).cx,2))+(Math.pow(listeCoins.get(0).cy-listeCoins.get(1).cy,2)));
+        double b = Math.sqrt((Math.pow(listeCoins.get(1).cx - listeCoins.get(2).cx,2))+(Math.pow(listeCoins.get(1).cy-listeCoins.get(2).cy,2)));
+        double c = Math.sqrt((Math.pow(listeCoins.get(2).cx - listeCoins.get(0).cx,2))+(Math.pow(listeCoins.get(2).cy-listeCoins.get(0).cy,2)));
+        if (a<b && c<b)
+        {
+            return a*c;
+        }
+        else if (a<c && b<c)
+        {
+            return a*b;            
+        }
+        else if (b<a && c<a)
+        {
+            return c*b;
+        }
+        
         return 0; //temporaire 
             
             }

@@ -69,8 +69,8 @@ public class DevisBatiment {
          Coin a,b,c,d;
          a = new Coin(1,2,1);
          b = new Coin(2,4,1);
-         c = new Coin(3,2,4);
-         d = new Coin(4,4,4);
+         c = new Coin(3,2,5);
+         d = new Coin(4,5,5);
          ArrayList<Coin> coins = new ArrayList<Coin>();
          coins.add(a);
          coins.add(b);
@@ -78,7 +78,7 @@ public class DevisBatiment {
          coins.add(d);
          ArrayList<Revêtement> liste = new ArrayList<Revêtement>();
          
-         Sol S =new Sol(1,coins,liste);
-         System.out.println(S.Surface());
+         Plafond S =new Plafond(1,coins,liste);
+         System.out.println(S.surface());
     }
  }
