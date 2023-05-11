@@ -4,7 +4,7 @@
  */
 
 package fr.insa.dumay.devisbatiment;
-import java.util.List;
+import java.util.ArrayList;
 /**
  *
  * @author cdumay01
@@ -67,13 +67,18 @@ public class DevisBatiment {
          System.out.println(p);
 */
          Coin a,b,c,d;
-         a = new Coin(1,2,3);
-         b = new Coin(2,3,4);
-         c = new Coin(3,4,5);
-         d = new Coin(4,5,6);
-         List<Coin> coins;
-         //for(int i;i=0)
-             
+         a = new Coin(1,2,1);
+         b = new Coin(2,4,1);
+         c = new Coin(3,2,4);
+         d = new Coin(4,4,4);
+         ArrayList<Coin> coins = new ArrayList<Coin>();
+         coins.add(a);
+         coins.add(b);
+         coins.add(c);
+         coins.add(d);
+         ArrayList<Revêtement> liste = new ArrayList<Revêtement>();
          
+         Sol S =new Sol(1,coins,liste);
+         System.out.println(S.Surface());
     }
  }
