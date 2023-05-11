@@ -26,7 +26,11 @@ public class Plafond {
     }
     
     // Méthode pour calculer la surface du plafond
-    public double surface() {}
+    public double surface() 
+    {
+        return 0; //temporaire 
+            
+            }
     
     // Méthode pour afficher les informations sur le plafond
     public String ToString() {

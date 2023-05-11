@@ -13,7 +13,7 @@ public class DevisBatiment {
 
     public static void main(String[] args) {
         // Création d'un coin c1
-        Coin c1;
+       /* Coin c1;
         System.out.println(" Identifiant du Coin");
         int id=Lire.i();
         System.out.println(" Abscisse du Coin");
@@ -56,7 +56,11 @@ public class DevisBatiment {
          // Calcul et affichage de la surface d'un mur
          //double surface=m1.surface();
          //System.out.println(m1.toString()+"\nSurface :"+m1.surface());
-         System.out.format("\nSurface :%.2f",m1.surface());
+         //System.out.format("\nSurface :%.2f",m1.surface());
          //AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHHHHHHHHHHHHHHHHHH
-    }//salut
+         
+         Appartement a = new Appartement(1,1);
+         System.out.print(a);
+         
+    }
  }

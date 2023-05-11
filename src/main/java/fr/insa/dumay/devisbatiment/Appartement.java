@@ -37,12 +37,16 @@ public class Appartement {
     {
         return 0; // temporaire
     }
-    
+
     @Override
-    public String toString()
-    {
-        return ""; //temporaire
+    public String toString() {
+        return "Appartement{" + "idAppartement=" + idAppartement + ", idNiveauAppartement=" + idNiveauAppartement + ", listePieces=" + listePieces + '}';
     }
+
+
+   
+    
+    
     
     
 }

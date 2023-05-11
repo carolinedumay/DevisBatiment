@@ -40,6 +40,9 @@ public class Sol {
         return result;
     }
     
-    public double Surface() {}
-  
+    public double Surface() 
+    {
+        return 0; //temporaire
+    }
+    
     }
