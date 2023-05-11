@@ -33,7 +33,7 @@ public class Plafond {
             }
     
     // Méthode pour afficher les informations sur le plafond
-    public String ToString() {
+    /*public String ToString() {
         String infop = "Plafond " + idPlafond + "\n:Coins :";
         for (Coin coin : listeCoins) {
             infop = infop + "  " + coin + " \n ";
@@ -41,5 +41,11 @@ public class Plafond {
         infop = infop + "Revetements : " + listeRevetements + "\n";
         infop = infop + "Surface : " + surface() + " m²\n";
         return infop;
+    }*/
+
+    @Override
+    public String toString() {
+        return "Plafond{" + "idPlafond=" + idPlafond + ", listeCoins=" + listeCoins + ", listeRevetements=" + listeRevetements + '}';
     }
+    
 }
