@@ -11,22 +11,26 @@ package fr.insa.dumay.devisbatiment;
  */
 public class Tremie extends Ouverture{
     //Attribut
-    int idTremie;
-    double largeur;
-    double hauteur;
-            
+    //int idTremie;
+    //double largeur;
+    //double hauteur;
+    
     //Conctructeurs
     Tremie (int id, double x, double y)
-    {
-        super(id,x,y);
-    /*        
+    {   
+        super(id);
+        this.dimX=x;
+        this.dimY=y;
+        this.type = "Tremie";
+        /*        
+        
     this.idTremie=id;
     this.largeur=x;
     this.hauteur=y;*/
     }
     
     //Méthodes
-    void afficher()
+ /*   void afficher()
     {
         System.out.println(" Tremie : id ="+this.idTremie+" largueur = "+this.largeur+ " hauteur ="+this.hauteur);
     }
@@ -35,5 +39,6 @@ public class Tremie extends Ouverture{
     {
         return((this.largeur)*(this.hauteur));
     }*/
+    
     
 }

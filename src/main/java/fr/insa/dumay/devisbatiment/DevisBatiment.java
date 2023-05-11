@@ -59,8 +59,12 @@ public class DevisBatiment {
          //System.out.format("\nSurface :%.2f",m1.surface());
          //AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHHHHHHHHHHHHHHHHHH
          
-         Appartement a = new Appartement(1,1);
-         System.out.print(a);
+         Tremie a = new Tremie(1,1,1);
+         Porte p = new Porte(2);
+         Fenetre f = new Fenetre(3);
+         System.out.println(a);
+         System.out.println(f);
+         System.out.println(p);
          
     }
  }

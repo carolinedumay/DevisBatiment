@@ -11,14 +11,17 @@ package fr.insa.dumay.devisbatiment;
 public class Porte extends Ouverture{
     
     //Attribut
-    int idPorte;
-    double largeur;
-    double hauteur;
+   // int idPorte;
+   // double largeur;
+   // double hauteur;
             
     //Conctructeurs
-    Porte (int id, double x, double y)
+    Porte (int id)
     {
-        super (id, x, y);
+        super (id);
+        this.dimX=2;
+        this.dimY=1;
+        this.type="Porte";
         /*
     this.idPorte=id;
     this.largeur=x;
@@ -26,7 +29,7 @@ public class Porte extends Ouverture{
     }
     
     //Méthodes
-    void afficher()
+   /* void afficher()
     {
         System.out.println(" Porte : id ="+this.idPorte+" largueur = "+this.largeur+ " longueur ="+this.hauteur);
     }
@@ -34,5 +37,5 @@ public class Porte extends Ouverture{
     double surface()
     {
         return((this.largeur)*(this.hauteur));
-    }
+    }*/
     }

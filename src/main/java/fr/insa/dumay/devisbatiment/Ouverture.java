@@ -13,13 +13,14 @@ public class Ouverture {
     int idOuverture;
     double dimX;
     double dimY;
+    String type = "Ouverture";
             
     //Conctructeurs
-    Ouverture (int id, double x, double y)
+    Ouverture (int id/*, double x, double y*/)
     {
     this.idOuverture=id;
-    this.dimX=x;
-    this.dimY=y;
+   // this.dimX=x;
+   // this.dimY=y;
     }
     
     //Méthodes
@@ -32,5 +33,15 @@ public class Ouverture {
     {
         return((this.dimX)*(this.dimY));
     }
+
+    @Override
+    public String toString() {
+        return type+"{" + "id"+type+"=" + idOuverture + ", dimX=" + dimX + ", dimY=" + dimY + '}';
     }
+    
+    
+    
+    
+    }
+
     
