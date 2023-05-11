@@ -1,0 +1,37 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package fr.insa.dumay.devisbatiment.interfacegraphique;
+
+import java.awt.Canvas;
+import javafx.scene.control.Button;
+import javafx.scene.control.RadioButton;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.VBox;
+
+/**
+ *
+ * @author juliette
+ */
+public class MainPane extends BorderPane {
+    
+    private RadioButton rbSelect;
+    private RadioButton rbPoints;
+    private RadioButton rbSegments;
+    
+    private Button rbGrouper;
+    private Button rbCouleur; 
+    
+    private Canvas cDessin;
+    
+    public MainPane(){
+        this.rbSelect=new RadioButton("Select");
+        this.rbPoints=new RadioButton("Points");
+        this.rbSegments=new RadioButton("Segments");
+        
+        VBox vbGauche = new VBox(this.rbSelect,this.rbPoints,this.rbSegments);
+        
+    }
+    
+}
