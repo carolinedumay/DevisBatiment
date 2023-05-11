@@ -25,24 +25,29 @@ public class Sol {
     }
     
     // Méthodes
-    public void Afficher() {
+ /*   public void Afficher() {
         System.out.println("---- Sol ----");
         for (Coin c : this.listeCoin) {
             c.afficher();
         }
-    }
+    }*/
     
-    public String ToString() {
+    /*public String ToString() {
         String result = "Sol " + this.idSol + " : ";
         for (Coin c : this.listeCoin) {
             result = result + "(" + c.cx + ", " + c.cy + ") ";
         }
         return result;
-    }
+    }*/
     
     public double Surface() 
     {
         return 0; //temporaire
     }
-    
+
+    @Override
+    public String toString() {
+        return "Sol{" + "idSol=" + idSol + ", listeCoin=" + listeCoin + ", listeRevetements=" + listeRevetements + '}';
     }
+    
+}

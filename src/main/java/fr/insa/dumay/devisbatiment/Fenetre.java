@@ -12,14 +12,17 @@ public class Fenetre extends Ouverture{
     /// On met RIEN d'autre ? On garde tout sauf le calcul qu'est déjà dans Ouverture
     
     //Attribut
-    int idFenetre;
-    double largeur;
-    double hauteur;
+    //int idFenetre;
+    //double largeur;
+    //double hauteur;
             
     //Conctructeurs
-    Fenetre (int id, double x, double y)
+    Fenetre (int id)
     {
-        super(id,x,y);
+        super(id);
+        this.dimX=1;
+        this.dimY=1;
+        this.type="Fenetre";
     /*        
     this.idFenetre=id;
     this.largeur=x;
@@ -27,7 +30,7 @@ public class Fenetre extends Ouverture{
     }
     
     //Méthodes
-    void afficher()
+/*    void afficher()
     {
         System.out.println(" Fenetre : id ="+this.idFenetre+" largueur = "+this.largeur+ " hauteur ="+this.hauteur);
     }

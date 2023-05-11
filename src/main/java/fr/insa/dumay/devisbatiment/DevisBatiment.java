@@ -4,7 +4,7 @@
  */
 
 package fr.insa.dumay.devisbatiment;
-
+import java.util.List;
 /**
  *
  * @author cdumay01
@@ -58,9 +58,22 @@ public class DevisBatiment {
          //System.out.println(m1.toString()+"\nSurface :"+m1.surface());
          //System.out.format("\nSurface :%.2f",m1.surface());
          //AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHHHHHHHHHHHHHHHHHH
-         
-         Appartement a = new Appartement(1,1);
-         System.out.print(a);
+         /*
+         Tremie a = new Tremie(1,1,1);
+         Porte p = new Porte(2);
+         Fenetre f = new Fenetre(3);
+         System.out.println(a);
+         System.out.println(f);
+         System.out.println(p);
+*/
+         Coin a,b,c,d;
+         a = new Coin(1,2,3);
+         b = new Coin(2,3,4);
+         c = new Coin(3,4,5);
+         d = new Coin(4,5,6);
+         List<Coin> coins;
+         //for(int i;i=0)
+             
          
     }
  }
