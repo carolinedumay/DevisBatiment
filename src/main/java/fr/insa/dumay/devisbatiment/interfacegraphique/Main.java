@@ -19,14 +19,14 @@ public class Main extends Application {
 
     @Override
     public void start(Stage stage) {
-        var javaVersion = System.getProperty("java.version");
-        var javafxVersion = System.getProperty("javafx.version");
+        //var javaVersion = System.getProperty("java.version");
+        //var javafxVersion = System.getProperty("javafx.version");
 
-        var label = new Label("Hello, JavaFX " + javafxVersion + ", running on Java " + javaVersion + ".");
-        var scene = new Scene(new StackPane(label), 640, 480);
-        
-        stage.setScene(scene);
-        stage.show();
+        //var label = new Label("Hello, JavaFX " + javafxVersion + ", running on Java " + javaVersion + ".");
+        //var scene = new Scene(new StackPane(label), 640, 480);
+        Scene sc = new Scene(new MainPane());
+        stage.setScene(sc);
+         stage.show();
     }
 
     public static void main(String[] args) {
