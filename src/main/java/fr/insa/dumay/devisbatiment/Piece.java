@@ -15,4 +15,25 @@ public class Piece {
     int plafond;
     ArrayList<Mur> listeMurs;
     
+    public Piece(int id, int sol,int plafond, ArrayList<Mur> murs){
+    this.idPiece=id;
+    this.sol=sol;
+    this.plafond=plafond;
+    this.listeMurs=murs;
+}
+    
+    @Override
+    public String toString() {
+        return "Piece{" + "idPiece=" + idPiece + ", sol=" + sol + ", plafond=" + plafond + ", listeMurs=" + listeMurs + '}';
+    }
+
+    public double surface()
+    {
+        
+    }
+    
+    public void afficher()
+    {
+        
+    }
 }
