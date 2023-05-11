@@ -4,7 +4,7 @@
  */
 package fr.insa.dumay.devisbatiment.interfacegraphique;
 
-import java.awt.Canvas;
+import javafx.scene.canvas.Canvas;
 import javafx.scene.control.Button;
 import javafx.scene.control.RadioButton;
 import javafx.scene.layout.BorderPane;
@@ -38,8 +38,8 @@ public class MainPane extends BorderPane {
         VBox vbDroit = new VBox(this.bGrouper,this.bCouleur);
         this.setRight(vbDroit);
         
-        this.cDessin = new Canvas(200,200);
-        this.setCenter(this.cDessin);
+        this.cDessin = new DessinCanvas1(200,200);
+        this.setCenter(cDessin);
         
         
         

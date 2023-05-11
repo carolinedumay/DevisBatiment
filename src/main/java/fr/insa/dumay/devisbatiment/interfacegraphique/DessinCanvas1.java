@@ -4,8 +4,10 @@
  */
 package fr.insa.dumay.devisbatiment.interfacegraphique;
 
-import java.awt.Canvas;
-import java.awt.Color;
+
+import javafx.scene.*;
+import javafx.scene.canvas.*;
+import javafx.scene.paint.*;
 import javafx.scene.canvas.GraphicsContext;
 
 /**

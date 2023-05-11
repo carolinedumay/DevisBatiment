@@ -29,7 +29,7 @@ public class Piece {
 
     public double surface()
     {
-        
+        return 0;
     }
     
     public void afficher()
