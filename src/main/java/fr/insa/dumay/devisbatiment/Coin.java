@@ -22,10 +22,13 @@ public class Coin {
       this.cx=x;
       this.cy=y;
     }
-   
-    void afficher()
-    {
-        System.out.println(" Coin : id ="+this.idCoin+" abscisse = "+this.cx+ " Ordonnée ="+this.cy);
+
+    @Override
+    public String toString() {
+        return "Coin{" + "idCoin=" + idCoin + ", cx=" + cx + ", cy=" + cy + '}';
     }
+   
+    
+    
             
 }

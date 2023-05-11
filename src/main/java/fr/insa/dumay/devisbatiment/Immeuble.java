@@ -10,13 +10,13 @@ package fr.insa.dumay.devisbatiment;
  */
 public class Immeuble extends Batiment{
     /// Attributs ///
-    String idImmeuble;
+    
     
     
     Immeuble(String ID,int a)
     {
         super(ID);
-        this.idImmeuble= ID;
+        
     }
             
             

@@ -21,12 +21,7 @@ public class Batiment {
         this.idBatiment = ID;
     }
     
-/// Methodes ///
-    void afficher()
-    {
-        
-    }
-    
+/// Methodes ///  
     void sauvegarder()
     {
     

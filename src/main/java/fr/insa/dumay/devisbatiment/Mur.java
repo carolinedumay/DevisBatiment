@@ -25,12 +25,11 @@ public class Mur {
         this.fin=fc;
     }
     
-    void afficher()
+  /*  void afficher()
     {System.out.println("==== Mur =====");
         this.debut.afficher();
         this.fin.afficher();    
-    }
-    
+    }*/
     double longueur()
     {
         return(Math.sqrt((this.fin.cx-this.debut.cx)*(this.fin.cx-this.debut.cx) + (this.fin.cy-this.debut.cy)*(this.fin.cy-this.debut.cy)));
