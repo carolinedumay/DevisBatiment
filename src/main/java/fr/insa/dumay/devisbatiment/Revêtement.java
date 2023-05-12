@@ -30,13 +30,22 @@ public class Revêtement {
         this.pourPlafond = pp;
         this.prixUnitaire = pu;
     }
+
+    @Override
+    public String toString() {
+        return "Rev\u00eatement{" + "idRevetement=" + idRevetement + ", designation=" + designation + ", pourMur=" + pourMur + ", pourSol=" + pourSol + ", pourPlafond=" + pourPlafond + ", prixUnitaire=" + prixUnitaire + '}';
+    }
+    
         //liste de revêtements
-    public static List<Revêtement> lireRevêtements(String prixUnitaire2) {
-        List<Revêtement> revetements = new ArrayList<>();
-        try (BufferedReader reader = new BufferedReader(new FileReader(prixUnitaire2))) {
+    public static ArrayList<Revêtement> lireRevêtements() {
+        ArrayList<Revêtement> revetements = new ArrayList<>();
+        try (BufferedReader reader = new BufferedReader(new FileReader("prixUnitaires2.txt"))) {
             String lignelue;
             while ((lignelue = reader.readLine()) != null) { //? je sais pas quoi mettre pour que ça fonctionne correctement
                 String[] champs = lignelue.split(";");//on extrait les informations de chaque ligne
+                 
+                if (!(champs[0].equals("idRevetement")))
+                {       
                 int id = Integer.parseInt(champs[0]);
                 String designation = champs[1];//champs : éléments contenus dans une ligne de texte du fichier
                 boolean pourMur = Boolean.parseBoolean(champs[2]);
@@ -45,6 +54,8 @@ public class Revêtement {
                 double prixUnitaire = Double.parseDouble(champs[5]);
                 Revêtement revetement = new Revêtement(id, designation, pourMur, pourSol, pourPlafond, prixUnitaire);
                 revetements.add(revetement);
+                }
+                
             }
         } catch (IOException e) {
             System.out.println("Erreur lors de la lecture du fichier de revêtements : " + e.getMessage());
