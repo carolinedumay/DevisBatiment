@@ -34,6 +34,14 @@ public class MainPane extends BorderPane {
         this.setLeft(vbGauche);
         
         this.bGrouper= new Button("Grouper");
+        this.bGrouper.setOnAction(new EventHandler<ActionEvent>(){
+            @Override
+            public void handle(ActionEvent t){
+                System.out.println("Bouton Grouper cliqué");
+            }
+        });
+            
+        }
         this.bCouleur= new Button("Couleur");
         VBox vbDroit = new VBox(this.bGrouper,this.bCouleur);
         this.setRight(vbDroit);
