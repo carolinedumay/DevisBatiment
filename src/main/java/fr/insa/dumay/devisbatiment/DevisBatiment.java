@@ -80,5 +80,11 @@ public class DevisBatiment {
          
          Plafond S =new Plafond(1,coins,liste);
          System.out.println(S.surface());
+         Revêtement av = new Revêtement(1,"z",true,true,true,9.0);
+         ArrayList<Revêtement> test= new ArrayList<Revêtement>();
+         test = Revêtement.lireRevêtements();
+         
+         System.out.println(test);
+               
     }
  }
