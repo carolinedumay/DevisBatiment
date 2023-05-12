@@ -15,10 +15,11 @@ public class Appartement {
     ArrayList<Piece> listePieces;
     
     /// Constructeur ///
-    Appartement(int IDA, int IDN)
+    Appartement(int IDA, int IDN, ArrayList<Piece> pieces)
     {
         this.idAppartement=IDA;
         this.idNiveauAppartement=IDN;
+        this.listePieces=pieces;
     }
     
     /// Méthode ///
@@ -28,9 +29,13 @@ public class Appartement {
         
     }
     
-    double surface()
+    public double surface()
     {
-        return 0;//temporaire
+        double surface = 0;
+    for (Piece piece : listePieces){
+        surface += piece.Surface();
+    } 
+    return surface;
     }
     
     double montantRevetement()
@@ -42,6 +47,8 @@ public class Appartement {
     public String toString() {
         return "Appartement{" + "idAppartement=" + idAppartement + ", idNiveauAppartement=" + idNiveauAppartement + ", listePieces=" + listePieces + '}';
     }
+
+    
 
 
    
