@@ -26,20 +26,20 @@ public class MainPane extends BorderPane {
     private Canvas cDessin;
     
     public MainPane(){
-        this.rbSelect= new RadioButton("Select");
+        this.rbSelect= new RadioButton("Select"); //pour selectionner seulement un bouton parmis n boutons)
         this.rbPoints= new RadioButton("Points");
         this.rbSegments= new RadioButton("Segments");
         
-        VBox vbGauche = new VBox(this.rbSelect,this.rbPoints,this.rbSegments);
-        this.setLeft(vbGauche);
+        VBox vbGauche = new VBox(this.rbSelect,this.rbPoints,this.rbSegments); //déclarer qui est dans la zone verticale de gauche
+        this.setLeft(vbGauche); //mettre les membres de vbGauche à gauche
         
-        this.bGrouper= new Button("Grouper");
-        this.bGrouper.setOnAction(new EventHandler<ActionEvent>(){
+        this.bGrouper= new Button("Grouper"); //bouton simple
+        this.bGrouper.setOnAction(new EventHandler<ActionEvent>(){ //setOn : changer le comportement du bouton concernant une certaine action ; eventHandler : l'utlisateur a cliqué/utlisé raccourci clavier pour selectionner le bouton
             @Override
             public void handle(ActionEvent t){
-                System.out.println("Bouton Grouper cliqué");
+                System.out.println("Bouton Grouper cliqué"); //pour tester si le programme assimile que le bouton est cliqué
             }
-        });
+        }); //dans les acolades c'est une classe locale qui définir les méthodes de EventHandle r
             
         }
         this.bCouleur= new Button("Couleur");
