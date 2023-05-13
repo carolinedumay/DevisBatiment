@@ -4,6 +4,7 @@
  */
 package fr.insa.dumay.devisbatiment;
 
+import java.util.ArrayList;
 /**
  *
  * @author mfanget01
@@ -12,16 +13,16 @@ public class Niveau {
     /// Attributs ///
     int idNiveau;
     double hauteurSousPlafond;
-    //Appartement ListeApparts[];
+    ArrayList<Appartement> listeappartements;
     
     /// Constructeurs ///
     
-    Niveau(int ID, double H)
+    Niveau(int ID, double H, ArrayList<Appartement> appart)
     {
         this.idNiveau = ID;
         this.hauteurSousPlafond = H;
+        this.listeappartements=appart;
     }
-    
     
     /// Méthodes ///
     
@@ -39,11 +40,13 @@ public class Niveau {
     {
         return 0; //temporaire
     }
-    
-    @Override 
-    public String toString() //String ?
-    {
-        return  ""; //temporaire
+
+    @Override
+    public String toString() {
+        return "Niveau{" + "idNiveau=" + idNiveau + ", hauteurSousPlafond=" + hauteurSousPlafond + ", listeappartements=" + listeappartements + '}';
     }
+
+    
+    
     
 }
