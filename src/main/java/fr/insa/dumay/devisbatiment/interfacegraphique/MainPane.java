@@ -4,9 +4,12 @@
  */
 package fr.insa.dumay.devisbatiment.interfacegraphique;
 
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.control.Button;
 import javafx.scene.control.RadioButton;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
 
@@ -23,7 +26,7 @@ public class MainPane extends BorderPane {
     private Button bGrouper;
     private Button bCouleur; 
     
-    private Canvas cDessin;
+    private DessinCanvas cDessin;
     
     public MainPane(){
         this.rbSelect= new RadioButton("Select"); //pour selectionner seulement un bouton parmis n boutons)
@@ -41,17 +44,21 @@ public class MainPane extends BorderPane {
             }
         }); //dans les acolades c'est une classe locale qui définir les méthodes de EventHandle r
             
-        }
+        
         this.bCouleur= new Button("Couleur");
+        this.bCouleur.setOnMouseEntered(new EventHandler<MouseEvent>(){
+            @Override
+            public void handle(MouseEvent t){
+                System.out.println("entered couleur en :" + t.getX() + "," + t.getY());
+            }
+        });
         VBox vbDroit = new VBox(this.bGrouper,this.bCouleur);
         this.setRight(vbDroit);
         
-        this.cDessin = new DessinCanvas1(200,200);
+        this.cDessin = new DessinCanvas();
         this.setCenter(cDessin);
+    }
         
         
         
     }
-
-    
-}
