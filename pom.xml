@@ -7,15 +7,15 @@
     <packaging>jar</packaging>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.source>19</maven.compiler.source>
-        <maven.compiler.target>19</maven.compiler.target>
+        <maven.compiler.source>20</maven.compiler.source>
+        <maven.compiler.target>20</maven.compiler.target>
         <exec.mainClass>fr.insa.dumay.devisbatiment.DevisBatiment</exec.mainClass>
     </properties>
     <dependencies>
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-controls</artifactId>
-            <version>20</version>
+            <version>19</version>
         </dependency>
     </dependencies>
     <build>
@@ -25,7 +25,7 @@
         <artifactId>maven-compiler-plugin</artifactId> 
         <version>3.11.0</version>
         <configuration>
-            <release>20</release>
+            <release>19</release>
         </configuration>
     </plugin> 
     <plugin>
