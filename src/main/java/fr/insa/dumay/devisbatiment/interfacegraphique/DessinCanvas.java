@@ -15,17 +15,31 @@ import javafx.scene.paint.Color;
  */
 public class DessinCanvas extends Pane {
     
+    private MainPane main; //DC doit voir accès au paneau principal  et don au model et au controleur
+    
     private Canvas realCanvas;
     
-    public DessinCanvas(){
-        this.realCanvas = new Canvas(this.getWidth(), this.getHeight());
+    public DessinCanvas(MainPane main){
+        this.main = main;
+        this.realCanvas = new Canvas(this.getWidth(), this.getHeight());//création du canvas
+        this.getChildren().add(this.realCanvas); //on met le Canvas dans le Pane (getChildren = accéder au sous-composants d'un composant)
+        
+        this.realCanvas.heightProperty().bind(this.heightProperty());// la propriété de hauteur du Pane va être modifiée alors la prop de hauteur du Canvas est modifiée
+        this.realCanvas.heightProperty().addListener((o) -> {
+        System.out.println("w = " + this.realCanvas.getWidth()+ "et h = "+ this.realCanvas.getHeight()); //test pour voir la taille actuelle de la fenetre (on pourrait prendre celle du Pane mais on choisit celle du Canvas pour etre plus correct
+            this.redrawAll();//à chaque fois que je modifie la taille de la fenetre, je redessine
+        });
+        this.realCanvas.widthProperty().bind(this.widthProperty());// la propriété de largeur du Pane va être modifiée alors la prop de hauteur du Canvas est modifiée
+        this.realCanvas.widthProperty().addListener((o) -> {
+            this.redrawAll();//à chaque fois que je modifie la taille de la fenetre, je redessine
+        });
         this.redrawAll();
     }
     
     public void redrawAll(){ //on va surement avoir besoin de redessiner si on change la taille du canvas 
         GraphicsContext context = this.realCanvas.getGraphicsContext2D(); //c'est là-dessus que je peux dessiner
         context.setFill(Color.RED); //colorier en rouge
-        context.fillRect(0,0,this.getWidth(),this.getHeight()); // coord 1 et 2 : (0,0) : coin haut gauche de la fenetre ; coord 2 et 3 : taille en x et en y
+        context.fillRect(0,0,this.getWidth(),this.getHeight()); // coord 0 et 1 : (0,0) : coin haut gauche de la fenetre ; coord 2 et 3 : taille en x et en y
 
     }
             

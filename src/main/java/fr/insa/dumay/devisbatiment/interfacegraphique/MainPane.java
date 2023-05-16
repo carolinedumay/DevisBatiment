@@ -4,6 +4,7 @@
  */
 package fr.insa.dumay.devisbatiment.interfacegraphique;
 
+
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.canvas.Canvas;
@@ -19,6 +20,9 @@ import javafx.scene.layout.VBox;
  */
 public class MainPane extends BorderPane {
     
+    private Groupe Model; //ex du prof : model de données (groupe de figures dans son cas)
+    private Controleur controleur; //garder un lien vers le controleur et aussi J'AI SELECTIONNE getModel et getControleur pour y avoir accès hors panneau principal
+    
     private RadioButton rbSelect;
     private RadioButton rbPoints;
     private RadioButton rbSegments;
@@ -27,8 +31,14 @@ public class MainPane extends BorderPane {
     private Button bCouleur; 
     
     private DessinCanvas cDessin;
+    private Groupe model;
     
     public MainPane(){
+        this(new Groupe());
+    }
+    public MainPane(Groupe model){
+        this.model = model;
+        this.controleur = new Controleur(this);//le panneau principal accède au controleur ; on est dands MP donc le panneau principal c'est this
         this.rbSelect= new RadioButton("Select"); //pour selectionner seulement un bouton parmis n boutons)
         this.rbPoints= new RadioButton("Points");
         this.rbSegments= new RadioButton("Segments");
@@ -55,8 +65,22 @@ public class MainPane extends BorderPane {
         VBox vbDroit = new VBox(this.bGrouper,this.bCouleur);
         this.setRight(vbDroit);
         
-        this.cDessin = new DessinCanvas();
+        this.cDessin = new DessinCanvas(this);
         this.setCenter(cDessin);
+    }
+
+    /**
+     * @return the Model
+     */
+    public Groupe getModel() {
+        return Model;
+    }
+
+    /**
+     * @return the controleur
+     */
+    public Controleur getControleur() {
+        return controleur;
     }
         
         
