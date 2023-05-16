@@ -10,14 +10,15 @@ package fr.insa.dumay.devisbatiment;
  */
 public class Immeuble extends Batiment{
     /// Attributs ///
+    String idBatiment;
     
     
-    
-    Immeuble(String ID,int a)
+    Immeuble(String ID)
     {
         super(ID);
-        
+        this.idBatiment = ID;
     }
+    
             
             
 }

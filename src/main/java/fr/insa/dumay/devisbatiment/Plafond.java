@@ -47,7 +47,15 @@ public class Plafond {
         return 0; //temporaire 
             
             }
-    
+    double prixrevetement_p()
+    { 
+        double prix = 0;
+        for(int i = 0; i<listeRevetements.size();i++)
+        {  
+            prix += this.listeRevetements.get(0).prixUnitaire*this.surface();
+        }
+       return prix; 
+    }
     // Méthode pour afficher les informations sur le plafond
     /*public String ToString() {
         String infop = "Plafond " + idPlafond + "\n:Coins :";

@@ -16,10 +16,10 @@ public class Batiment {
     ArrayList<Niveau> listeNiveaux;
     
 /// Constructeurs ///
-    Batiment(String ID, ArrayList<Niveau> niveaux)
+    Batiment(String ID)
     {
         this.idBatiment = ID;
-        this.listeNiveaux= niveaux;
+        //this.listeNiveaux= niveaux;
     }
     
 /// Methodes ///  
@@ -37,4 +37,10 @@ public class Batiment {
     {
         
     }
+
+    @Override
+    public String toString() {
+        return "Batiment{" + "idBatiment=" + idBatiment + ", listeNiveaux=" + listeNiveaux + '}';
+    }
+    
 }

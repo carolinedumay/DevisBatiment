@@ -24,16 +24,16 @@ public class Appartement {
     
     /// Méthode ///
     
-    void afficher()
-    {
+    //void afficher()
+    //{
         
-    }
+    //}
     
     public double surface()
     {
         double surface = 0;
-    for (Piece piece : listePieces){
-        surface += piece.Surface();
+    for (Piece pieces : listePieces){
+        surface += pieces.Surface();
     } 
     return surface;
     }

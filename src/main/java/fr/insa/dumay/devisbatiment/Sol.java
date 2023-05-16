@@ -24,6 +24,16 @@ public class Sol {
         this.listeRevetements = revetements;
     }
     
+    double prixrevetement_s()
+    { 
+        double prix = 0;
+        for(int i = 0; i<listeRevetements.size();i++)
+        {  
+            prix += this.listeRevetements.get(0).prixUnitaire*this.surface();
+        }
+       return prix; 
+    }
+    
     // Méthodes
  /*   public void Afficher() {
         System.out.println("---- Sol ----");
@@ -40,7 +50,7 @@ public class Sol {
         return result;
     }*/
     
-    public double Surface() 
+    public double surface() 
     {
         //double a = listeCoin.get(0).cx;
         double a = Math.sqrt((Math.pow(listeCoin.get(0).cx - listeCoin.get(1).cx,2))+(Math.pow(listeCoin.get(0).cy-listeCoin.get(1).cy,2)));

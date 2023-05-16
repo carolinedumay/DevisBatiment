@@ -26,19 +26,23 @@ public class Niveau {
     
     /// Méthodes ///
     
-    void afficher()
-    {
+    //void afficher()
+    //{
         
-    }
+    //}
     
     double surface()
     {
+        double surface = 0;
+    for (Appartement appart : listeappartements){
+        surface += appart.surface();
+    }
+    return surface;
+    } 
     
-        return 0; //temporaire
-    }        
-    double montantRevetement()
+    double montantRevetement()//somme du prix de tous les revêtements de nivaux
     {
-        return 0; //temporaire
+      return 0;
     }
 
     @Override

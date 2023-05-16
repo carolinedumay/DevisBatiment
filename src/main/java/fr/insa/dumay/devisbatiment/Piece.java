@@ -31,9 +31,14 @@ public class Piece {
 
     public double Surface()
     {
-       return sol.Surface();
+       return sol.surface();
     }
     
+    public double montantrevetement()
+    {
+        int prixpiece = 0;
+        return 0;
+    }
     
    // public void afficher()
     //{

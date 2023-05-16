@@ -4,6 +4,7 @@
  */
 package fr.insa.dumay.devisbatiment;
 
+import java.util.ArrayList;
 /**
  *
  * @author cdumay01
@@ -16,6 +17,7 @@ public class Mur {
     Coin debut, fin;
     int nbPortes;
     int nbFenetres;
+    ArrayList<Revêtement> listeRevetements;
     
     // Constructeur
     Mur(int id, Coin dc, Coin fc)
@@ -41,8 +43,20 @@ public class Mur {
         double hsp=Lire.d();
         return(this.longueur()*hsp);
     }
+    
+    double prixrevetement_m()
+    {
+        double prix = 0;
+        for(int i = 0; i<listeRevetements.size();i++)
+        {  
+            prix += this.listeRevetements.get(0).prixUnitaire*this.surface();
+        }
+       return prix; 
+    }
+    
+}
 //nbrePortes : int 
 //nbreFenetres :int 
 //listeRevetements: List 
 //montantRevetement()
-}
+
