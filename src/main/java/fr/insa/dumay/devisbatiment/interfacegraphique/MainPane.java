@@ -39,6 +39,21 @@ public class MainPane extends BorderPane {
     public MainPane(Groupe model){
         this.model = model;
         this.controleur = new Controleur(this);//le panneau principal accède au controleur ; on est dands MP donc le panneau principal c'est this
+        
+        /**ESSAI DE SELECTION D'UN UNIQUE POINT 
+        this.rbSelect= new RadioButton("Select"); 
+        this.rbPoints= new RadioButton("Points");
+        this.rbSegments= new RadioButton("Segments");
+       
+        ToggleGroup toggleGroup = new ToggleGroup();
+        
+        rbSelect.setToggleGroup(toggleGroup);
+        rbPoints.setToggleGroup(toggleGroup);
+        rbSegments.setToggleGroup(toggleGroup);
+    
+        toggleGroup.getToggles().addAll(rbSelect, rbPoints, rbSegments);
+         * 
+         */
         this.rbSelect= new RadioButton("Select"); //pour selectionner seulement un bouton parmis n boutons)
         this.rbPoints= new RadioButton("Points");
         this.rbSegments= new RadioButton("Segments");
@@ -67,6 +82,7 @@ public class MainPane extends BorderPane {
         
         this.cDessin = new DessinCanvas(this);
         this.setCenter(cDessin);
+        
     }
 
     /**

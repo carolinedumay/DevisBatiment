@@ -15,7 +15,7 @@ import javafx.scene.paint.Color;
  */
 public class DessinCanvas extends Pane {
     
-    private MainPane main; //DC doit voir accès au paneau principal  et don au model et au controleur
+    private MainPane main; //DC doit avoir accès au paneau principal  et donc au model et au controleur
     
     private Canvas realCanvas;
     
@@ -37,10 +37,10 @@ public class DessinCanvas extends Pane {
     }
     
     public void redrawAll(){ //on va surement avoir besoin de redessiner si on change la taille du canvas 
-        GraphicsContext context = this.realCanvas.getGraphicsContext2D(); //c'est là-dessus que je peux dessiner
-        context.setFill(Color.RED); //colorier en rouge
-        context.fillRect(0,0,this.getWidth(),this.getHeight()); // coord 0 et 1 : (0,0) : coin haut gauche de la fenetre ; coord 2 et 3 : taille en x et en y
-
+        GraphicsContext context = this.realCanvas.getGraphicsContext2D(); //c'est GraphicsContext qui va me servir à dessiner
+        //context.setFill(Color.PURPLE); //colorier en rouge
+        //context.fillRect(0,500,this.getWidth(),this.getHeight()); // coord 0 et 1 : (0,0) : coin haut gauche de la fenetre ; coord 2 et 3 : taille en x et en y
+        Groupe model = this.main.getModel(); //accéder aux figures à travers le panneau principal
     }
             
 }

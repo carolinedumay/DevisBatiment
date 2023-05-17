@@ -54,6 +54,9 @@ public class Mur {
        return prix; 
     }
     
+    /**DESSINER SEGMENT (MUR)
+     * voir classe segment du prof
+     */
 }
 //nbrePortes : int 
 //nbreFenetres :int 
