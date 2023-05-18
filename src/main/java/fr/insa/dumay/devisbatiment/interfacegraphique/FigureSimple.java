@@ -4,21 +4,11 @@
  */
 package fr.insa.dumay.devisbatiment.interfacegraphique;
 
-import javafx.scene.paint.Color;
-
 /**
  *
  * @author juliette
  */
-public class Points {
+public abstract class FigureSimple { //abstract car aucun
     
-    private double px;
-    private double py;
-
-    public Points(double px, double py, Color couleur) {// enlever couleur
-        //super(couleur);
-        this.px = px;
-        this.py = py;
-    }
     
 }

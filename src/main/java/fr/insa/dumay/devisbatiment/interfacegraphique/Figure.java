@@ -10,7 +10,7 @@ import javafx.scene.canvas.GraphicsContext;
  *
  * @author juliette
  */
-public abstract class Figure {//jsp prq netbeans veut rendre cette classe abstract
+public abstract class Figure {
     
     private Groupe groupe;
     
