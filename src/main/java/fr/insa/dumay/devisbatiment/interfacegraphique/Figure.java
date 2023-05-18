@@ -14,10 +14,13 @@ public abstract class Figure {
     
     private Groupe groupe;
     
+    //setter
+    
     public Groupe getGroupe(){
         return groupe;
     }
-    void setGroupe(Groupe groupe){
+    
+    void setGroupe(Groupe groupe){ //public donc cette méthode n'est accessible que dans les autres classes du meme package
         this.groupe = groupe;
     }
     /**
@@ -30,4 +33,5 @@ public abstract class Figure {
     */
     public abstract void dessine(GraphicsContext context);
     //appeler la classe mur ?
+    
 }

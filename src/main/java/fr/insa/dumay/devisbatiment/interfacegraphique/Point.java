@@ -4,6 +4,8 @@
  */
 package fr.insa.dumay.devisbatiment.interfacegraphique;
 
+import fr.insa.dumay.devisbatiment.Lire;
+
 /**
  *
  * @author juliette
@@ -56,5 +58,15 @@ public class Point extends FigureSimple {
     @Override
     public String toString() {
         return "(" + px + "," + py + ')';
+    }
+    
+    
+    //entrer les coord du point (à modif pour juste clic souris)
+    public static Point demandePoint(){
+        System.out.println("abcisse : ");
+        double px = Lire.d();
+        System.out.println("ordonné : ");
+        double py = Lire.d();
+        return new Point(px, py);
     }
 }
