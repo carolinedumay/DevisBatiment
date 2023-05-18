@@ -33,6 +33,10 @@ public class DessinCanvas extends Pane {
         this.realCanvas.widthProperty().addListener((o) -> {
             this.redrawAll();//à chaque fois que je modifie la taille de la fenetre, je redessine
         });
+        this.realCanvas.setOnMouseClicked((t) -> {
+            Controleur control = this.main.getControleur();
+            control.clicDansZoneDessin(t);
+        });
         this.redrawAll();
     }
     
@@ -41,6 +45,7 @@ public class DessinCanvas extends Pane {
         //context.setFill(Color.PURPLE); //colorier en rouge
         //context.fillRect(0,500,this.getWidth(),this.getHeight()); // coord 0 et 1 : (0,0) : coin haut gauche de la fenetre ; coord 2 et 3 : taille en x et en y
         Groupe model = this.main.getModel(); //accéder aux figures à travers le panneau principal
+        model.dessine(context);
     }
             
 }

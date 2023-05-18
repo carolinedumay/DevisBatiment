@@ -4,6 +4,7 @@
  */
 package fr.insa.dumay.devisbatiment;
 import java.util.ArrayList;
+
 /**
  *
  * @author mathis
@@ -37,7 +38,9 @@ public class Piece {
     public double montantrevetement()
     {
         int prixpiece = 0;
-        return 0;
+        Sol sol = new Sol(id, coins, revetements);
+        Plafond plafond = new Plafond(idPlafond,listeCoins,listeRevetements);
+        //Mur mur = new Mur
     }
     
    // public void afficher()
