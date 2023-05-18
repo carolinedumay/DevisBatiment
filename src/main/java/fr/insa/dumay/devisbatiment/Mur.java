@@ -44,7 +44,7 @@ public class Mur {
         return(this.longueur()*hsp);
     }
     
-    double prixrevetement_m()
+    public double prixrevetement_m()
     {
         double prix = 0;
         for(int i = 0; i<listeRevetements.size();i++)
