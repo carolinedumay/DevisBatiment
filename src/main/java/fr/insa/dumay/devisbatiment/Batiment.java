@@ -28,9 +28,13 @@ public class Batiment {
     
     }
     
-    float devisBatiment() //float ?
+    double devisBatiment() //float ?
     {
-        return 0; //temporaire
+        double prix = 0;
+       for (Niveau niveaux : listeNiveaux){
+       prix += niveaux.montantRevetement();
+       }
+       return prix;
     }        
             
     void Dessiner()

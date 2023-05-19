@@ -40,8 +40,12 @@ public class Appartement {
     
     double montantRevetement()
     {
-        return 0; // temporaire
-    }
+       double prix = 0;
+       for (Piece pieces : listePieces){
+       prix += pieces.montantrevetement();
+       }
+       return prix;
+       }
 
     @Override
     public String toString() {

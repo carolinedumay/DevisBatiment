@@ -37,10 +37,13 @@ public class Piece {
     
     public double montantrevetement()
     {
-        int prixpiece = 0;
-        Sol sol = new Sol(id, coins, revetements);
-        Plafond plafond = new Plafond(idPlafond,listeCoins,listeRevetements);
-        //Mur mur = new Mur
+        double prixtotal = 0;
+        for (Mur mur : listeMurs){
+        prixtotal += mur.prixrevetement_m();
+        }
+        prixtotal += sol.prixrevetement_s();
+        prixtotal += plafond.prixrevetement_p();
+        return prixtotal;
     }
     
    // public void afficher()

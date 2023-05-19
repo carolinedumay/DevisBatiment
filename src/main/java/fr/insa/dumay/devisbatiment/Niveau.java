@@ -42,7 +42,11 @@ public class Niveau {
     
     double montantRevetement()//somme du prix de tous les revêtements de nivaux
     {
-      return 0;
+      double prix = 0;
+       for (Appartement appartements : listeappartements){
+       prix += appartements.montantRevetement();
+       }
+       return prix;
     }
 
     @Override
