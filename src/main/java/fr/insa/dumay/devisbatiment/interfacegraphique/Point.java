@@ -5,12 +5,15 @@
 package fr.insa.dumay.devisbatiment.interfacegraphique;
 
 import fr.insa.dumay.devisbatiment.Lire;
+import javafx.scene.canvas.GraphicsContext;
 
 /**
  *
  * @author juliette
  */
 public class Point extends FigureSimple {
+    
+    public static double RAYON_IN_DRAW = 5; //rayon du cercle(=point)
     
     private double px;
     private double py;
@@ -62,11 +65,18 @@ public class Point extends FigureSimple {
     
     
     //entrer les coord du point (à modif pour juste clic souris)
-    public static Point demandePoint(){
+    /**public static Point demandePoint(){
         System.out.println("abcisse : ");
         double px = Lire.d();
         System.out.println("ordonné : ");
         double py = Lire.d();
         return new Point(px, py);
+      
+    }
+    */
+    
+    //@Override
+    public void dessine(GraphicsContext context){
+        context.fillOval(this.px-RAYON_IN_DRAW, this.px-RAYON_IN_DRAW, 2*RAYON_IN_DRAW, 2*RAYON_IN_DRAW);// taille = 2*rayon
     }
 }

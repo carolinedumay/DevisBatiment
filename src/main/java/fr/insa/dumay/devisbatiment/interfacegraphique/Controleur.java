@@ -30,7 +30,7 @@ public class Controleur {
     void clicDansZoneDessin(MouseEvent t) {
         double px = t.getX();
         double py = t.getY();
-        //Color col = Color.color(Math.random(),Math.random(),Math.random());
+        Color col = Color.color(Math.random(),Math.random(),Math.random());
         Groupe model = this.vue.getModel();
         model.add(new Point(px, py));// col a un lien avec la couleur mais le .add bug quand on l'enlève
         this.vue.redrawAll();

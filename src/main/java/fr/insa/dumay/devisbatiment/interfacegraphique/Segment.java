@@ -5,6 +5,8 @@
 package fr.insa.dumay.devisbatiment.interfacegraphique;
 
 import fr.insa.dumay.devisbatiment.Lire;
+import static fr.insa.dumay.devisbatiment.interfacegraphique.Point.RAYON_IN_DRAW;
+import javafx.scene.canvas.GraphicsContext;
 
 /**
  *
@@ -37,15 +39,19 @@ public class Segment extends FigureSimple {
     }
     
         //entrer les coord du point (à modif pour juste clic souris)
-    public static Segment demandeSegment(){
+    /**public static Segment demandeSegment(){
         System.out.println("point début : ");
         Point deb = Point.demandePoint();
         System.out.println("point fin : ");
         Point fin = Point.demandePoint();
         return new Segment(deb, fin);
     }
+    */ 
     
-    
+    //@Override
+    public void dessine(GraphicsContext context){
+        context.strokeLine(this.debut.getPx(),this.debut.getPy(),this.fin.getPx(),this.fin.getPy());
+    }
    
     
 }

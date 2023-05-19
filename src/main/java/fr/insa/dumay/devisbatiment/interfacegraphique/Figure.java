@@ -31,7 +31,7 @@ public abstract class Figure {
     
     public abstract double distancePoint(Point p);
     */
-    public abstract void dessine(GraphicsContext context);
-    //appeler la classe mur ?
+    public abstract void dessine(GraphicsContext context);//toute figure doit pouvoir se dessiner dans un certain contexte graphique
+    
     
 }

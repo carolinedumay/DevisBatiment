@@ -79,7 +79,7 @@ public class MainPane extends BorderPane {
         VBox vbDroit = new VBox(this.getbGrouper(), this.getbCouleur());
         this.setRight(vbDroit);
 
-        this.cDessin = new DessinCanvas(this);
+        this.cDessin = new DessinCanvas(this);//dessin canvas se trouve dans ce MainPane
         this.setCenter(cDessin);
         this.controleur.changeEtat(30);
 

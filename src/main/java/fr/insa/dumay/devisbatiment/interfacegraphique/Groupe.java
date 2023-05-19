@@ -6,6 +6,7 @@ package fr.insa.dumay.devisbatiment.interfacegraphique;
 
 import java.util.ArrayList;
 import java.util.List;
+import javafx.scene.canvas.GraphicsContext;
 
 /**
  *
@@ -28,6 +29,13 @@ public class Groupe extends Figure {
             }
             this.contient.add(f); //si figure n'est pas dans le groupe ni dans les autres groupes : ajout de la figure
             f.setGroupe(this);
+        }
+    }
+    
+    @Override
+    public void dessine(GraphicsContext context){
+        for(Figure f : this.contient){//pour chaque figure contenu dans ce groupe, je demande à la figure de dessiner
+            f.dessine(context);
         }
     }
     

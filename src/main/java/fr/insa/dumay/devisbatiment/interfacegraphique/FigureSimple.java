@@ -11,4 +11,5 @@ package fr.insa.dumay.devisbatiment.interfacegraphique;
 public abstract class FigureSimple { //abstract car aucun
     
     
+    
 }
