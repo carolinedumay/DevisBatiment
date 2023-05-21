@@ -48,7 +48,7 @@ public class Segment extends FigureSimple {
     }
     */ 
     
-    //@Override
+    @Override
     public void dessine(GraphicsContext context){
         context.strokeLine(this.debut.getPx(),this.debut.getPy(),this.fin.getPx(),this.fin.getPy());
     }

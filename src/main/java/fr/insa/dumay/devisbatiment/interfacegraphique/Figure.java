@@ -5,12 +5,15 @@
 package fr.insa.dumay.devisbatiment.interfacegraphique;
 
 import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.paint.Color;
 
 /**
  *
  * @author juliette
  */
 public abstract class Figure {
+    
+    public static Color COULEUR_SELECTION = Color.RED;//je sais pas quoi en fzire
     
     private Groupe groupe;
     
@@ -33,5 +36,7 @@ public abstract class Figure {
     */
     public abstract void dessine(GraphicsContext context);//toute figure doit pouvoir se dessiner dans un certain contexte graphique
     
+    public abstract void dessineSelection(GraphicsContext context);
     
+    public abstract void changeCouleur(Color value);//truc en rapport avec la couleur et jsp pas quoi en faire
 }

@@ -77,6 +77,10 @@ public class Point extends FigureSimple {
     
     //@Override
     public void dessine(GraphicsContext context){
-        context.fillOval(this.px-RAYON_IN_DRAW, this.px-RAYON_IN_DRAW, 2*RAYON_IN_DRAW, 2*RAYON_IN_DRAW);// taille = 2*rayon
+        context.fillOval(this.px-RAYON_IN_DRAW, this.py-RAYON_IN_DRAW, 2*RAYON_IN_DRAW, 2*RAYON_IN_DRAW);// taille = 2*rayon
+    }
+    public void dessineSelection(GraphicsContext context){//truc en rapport avec la couleur dcp je sais pas quoi en faire
+        context.setFill(Figure.COULEUR_SELECTION);
+        context.fillOval(this.px-RAYON_IN_DRAW, this.py-RAYON_IN-DRAW, 2*RAYON_IN_DRAW, 2*RAYON_IN_DRAW);
     }
 }

@@ -4,6 +4,7 @@
  */
 package fr.insa.dumay.devisbatiment.interfacegraphique;
 
+import java.util.List;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.layout.Pane;
@@ -46,6 +47,12 @@ public class DessinCanvas extends Pane {
         //context.fillRect(0,500,this.getWidth(),this.getHeight()); // coord 0 et 1 : (0,0) : coin haut gauche de la fenetre ; coord 2 et 3 : taille en x et en y
         Groupe model = this.main.getModel(); //accéder aux figures au travers le panneau principal
         model.dessine(context);
+        List<Figure> select = this.main.getControleur().getSelection();
+        if(! select.isEmpty()){
+            for (Figure f : select){
+                f.dessineSelection(context);
+            }
+        }
     }
             
 }
