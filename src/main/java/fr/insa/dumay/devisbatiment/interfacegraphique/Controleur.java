@@ -5,6 +5,7 @@
 package fr.insa.dumay.devisbatiment.interfacegraphique;
 
 import javafx.scene.input.MouseEvent;
+import javafx.scene.paint.*;
 
 /**
  *
