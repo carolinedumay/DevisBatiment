@@ -7,7 +7,6 @@ package fr.insa.dumay.devisbatiment.interfacegraphique;
 import java.util.ArrayList;
 import java.util.List;
 import javafx.scene.canvas.GraphicsContext;
-import javafx.scene.paint.Color;
 
 /**
  *
@@ -22,26 +21,6 @@ public class Groupe extends Figure {
         this.contient = new ArrayList<Figure>();//liste dans une interface : ArrayList
     }
     
-    public Figure plusProche(Point p, double distMax){
-        if (this.contient.isEmpty()) {//si grp vide
-            return null;
-        } else{
-            Figure fmin = this.contient.get(0);
-            double min = fmin.distancePoint(p); //distance point est une méthode qui en théorie aurait dû déjà être crée dans cette classe
-            for(int i = 1; i<this.contient.size(); i++){
-                double cur = fcur.distancePoint(p);
-                if (cur<min){
-                    min = cur;
-                    fmin = fcur;
-                }
-            }
-            if(min<= distMax){
-                return fmin;
-            } else{
-                return null;
-            }
-        }
-    }
     //ajout d'une figure au groupe et on dit que groupe de la figure c'est ce groupe là
     public void add(Figure f){
         if(f.getGroupe() != this){
@@ -59,17 +38,7 @@ public class Groupe extends Figure {
             f.dessine(context);
         }
     }
-    @Override
-    public void dessineSelection(GraphicsContext context){
-        for(Figure f : this.contient){
-            f.dessineSelection(context);
-        }
-    }
-    @Override
-    public void changeCouleur(Color value){
-        for (Figure f : this.contient){
-            f.changeCouleur(value);
-        }
-    }
+    
+    
     
 }
