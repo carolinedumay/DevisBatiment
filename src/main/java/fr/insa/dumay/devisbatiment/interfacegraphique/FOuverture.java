@@ -4,43 +4,39 @@
  */
 package fr.insa.dumay.devisbatiment.interfacegraphique;
 
+import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
-
+import javafx.stage.Stage;
 /**
  *
  * @author juliette
  */
-public class FOuverture extends MainPane {
-    public FOuverture() {
-        setTitle("Ouverture");
+public class FOuverture extends BorderPane {
+    Stage test;
+    public FOuverture(Stage A) {
+       
 
         Button closeButton = new Button("Fermer");
         closeButton.setOnAction(event -> close());
 
         VBox vbox = new VBox();
         vbox.getChildren().addAll(new Button("Cliquez-moi"), closeButton);
-
-        Scene scene = new Scene(vbox, 300, 200);
-        setScene(scene);
-    }
-
-    
-    
-    
-    
-    
-    private void setTitle(String fenêtre_secondaire) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        this.setBottom(vbox);
+        //Scene scene = new Scene(vbox, 300, 200); 
+        test = A;
     }
 
     private void close() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        this.test.setScene(new Scene(new MainPane(), 800,600));
     }
 
-    private void setScene(Scene scene) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
     
+    
+    
+    
+    
+
 }
