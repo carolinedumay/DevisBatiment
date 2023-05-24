@@ -49,7 +49,7 @@ public class Controleur {
         if (this.etat == 20){
             Point pclic = new Point(t.getX(), t.getY());
             //pas de limite de distance entre le clic et l'object selectionné
-            Figure proche = this.vue.getModel().plusProche(pclic, Double.MAX_VALUE);
+       /*     Figure proche = this.vue.getModel().plusProche(pclic, Double.MAX_VALUE);
             //il faut quand même prévoir le cas où le grp est vide
             // donc pas de plus proche
             if (proche != null){
@@ -67,13 +67,13 @@ public class Controleur {
                 }
                 this.activeBoutonsSuivantSelection();
                 this.vue.redrawAll();
-            }
+            }*/
         } else if(this.etat == 30){
             double px = t.getX();
             double py = t.getY(); 
             Color col = Color.color(Math.random(),Math.random(),Math.random());
             Groupe model = this.vue.getModel();
-            model.add(new Point(px, py, col));// col a un lien avec la couleur mais le .add bug quand on l'enlève
+    //        model.add(new Point(px, py, col));// col a un lien avec la couleur mais le .add bug quand on l'enlève
             this.vue.redrawAll();
         } else if (this.etat == 40){
             this.pos1[0] = t.getX();
@@ -83,9 +83,9 @@ public class Controleur {
             double px2 = t.getX();
             double py2 = t.getY();
             Color col = Color.color(Math.random(),Math.random(),Math.random());
-            this.vue.getModel().add(
+        /*    this.vue.getModel().add(
                     new Segment(new Point(this.pos1[0], this.pos1[1]),//coordonnées premier clic
-                            new Point(px2,py2),col));//points du deuxième clic
+                            new Point(px2,py2)/*,col));//points du deuxième clic*/
             this.vue.redrawAll();
             this.changeEtat(40);
         }
@@ -118,9 +118,9 @@ public class Controleur {
     
     void boutonGrouper(ActionEvent t){
         if (this.etat == 20 && this.selection.size() >1){
-            Groupe ssGroupe = this.vue.getModel().sousGroupe(selection);
+          //  Groupe ssGroupe = this.vue.getModel().sousGroupe(selection);
             this.selection.clear();
-            this.selection.add(ssGroupe);
+          //  this.selection.add(ssGroupe);
             this.vue.redrawAll();
         }
     }
@@ -128,7 +128,7 @@ public class Controleur {
     void changeColor(Color value){ //idem par rapport à la couleur jsp quoi en faire
         if (this.etat == 20&& this.selection.size() > 0){
             for (Figure f : this.selection){
-                f.changeCouleur(value);
+          //      f.changeCouleur(value);
             }
             this.vue.redrawAll();
         }

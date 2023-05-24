@@ -13,7 +13,7 @@ import javafx.scene.layout.VBox;
  * @author juliette
  */
 public class FOuverture extends MainPane {
-    /**public FOuverture() {
+    public FOuverture() {
         setTitle("Ouverture");
 
         Button closeButton = new Button("Fermer");
@@ -42,5 +42,5 @@ public class FOuverture extends MainPane {
     private void setScene(Scene scene) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
-    */
+    
 }

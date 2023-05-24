@@ -16,6 +16,7 @@ import java.io.*;
  */
 public class Main extends Application {
 
+    
     @Override
     public void start(Stage stage) {
         var javaVersion = System.getProperty("java.version");
@@ -25,6 +26,7 @@ public class Main extends Application {
         //var scene = new Scene(new StackPane(label), 640, 480);
         Scene scene = new Scene(new MainPane(), 800,600);//format de la fenetre : 800x600
         stage.setScene(scene);
+        stage.setTitle("azdqsxq");
           stage.show();
     }
 
@@ -32,7 +34,7 @@ public class Main extends Application {
         launch();
         
         //création du fichier texte batiment.txt
-        try
+       /* try
         {
         BufferedWriter batiment=new BufferedWriter(new FileWriter("batiment.txt",true));
         batiment.write("Coin;1;5,26;16,25");
@@ -44,7 +46,7 @@ public class Main extends Application {
         catch(IOException erreur)
         {
             System.out.println("erreur fichier");
-        }
+        }*/
         //Lecture du fichier texte catalogueRevetement.txt
         //recherche de revetement par désignation
         String designation="Peinture";
