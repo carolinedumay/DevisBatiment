@@ -78,13 +78,25 @@ public class DevisBatiment {
          coins.add(d);
          ArrayList<Revêtement> liste = new ArrayList<Revêtement>();
          
-         Plafond S =new Plafond(1,coins,liste);
+         Sol S =new Sol(1,coins);
+         S.listeRevetements.add(new Revêtement(1,"d",true,true,true,1.5));
          System.out.println(S.surface());
          Revêtement av = new Revêtement(1,"z",true,true,true,9.0);
          ArrayList<Revêtement> test= new ArrayList<Revêtement>();
-         test = Revêtement.lireRevêtements();
+         Batiment B = new Batiment("ze");
          
-         System.out.println(test);
+         ArrayList<Appartement> LA = new ArrayList<Appartement>();
+         ArrayList<Piece> P = new ArrayList<Piece>();
+         Appartement A = new Appartement(1,1,P);
+         System.out.println(P);
+         LA.add(A);
+        // P.add(new Piece(1, new Sol()));
+         Niveau N = new Niveau(2,1,LA);
+         System.out.print(LA);
+         
+         B.listeNiveaux.add(N);
+         System.out.println(B);
+         B.sauvegarder();
                
     }
  }

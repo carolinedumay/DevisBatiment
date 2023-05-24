@@ -4,6 +4,7 @@
  */
 package fr.insa.dumay.devisbatiment;
 import java.util.ArrayList;
+import java.io.*;
 /**
  *
  * @author mfanget01
@@ -16,17 +17,62 @@ public class Batiment {
     ArrayList<Niveau> listeNiveaux;
     
 /// Constructeurs ///
+    Batiment(String ID, ArrayList<Niveau> listeNiveau)
+    {
+        this.idBatiment = ID;
+        this.listeNiveaux= listeNiveau;
+    }
     Batiment(String ID)
     {
         this.idBatiment = ID;
-        //this.listeNiveaux= niveaux;
+        this.listeNiveaux= new ArrayList<Niveau>();
     }
     
 /// Methodes ///  
     void sauvegarder()
     {
+         try
+        {
+        BufferedWriter batiment=new BufferedWriter(new FileWriter("batiment.txt",false));
+        for(Niveau Niveau : listeNiveaux)
+        {
+            for(Appartement Appart : Niveau.listeappartements)
+            {
+                for(Piece piece : Appart.listePieces)
+                {
+                    for(Coin coin : piece.sol.listeCoin)
+                    {
+                        batiment.write("Coin;"+coin.idCoin+";"+coin.cx+";"+coin.cy);
+            
+        
+                    }
+            
+        
+                }
+                batiment.write(Niveau.toString());
+                batiment.newLine();
+        
+            }
+            batiment.write(Niveau.toString());
+            batiment.newLine();
+        
+        }
+       
+        batiment.close();
+        }
+        catch(IOException erreur)
+        {
+            System.out.println("erreur fichier");
+        }
+        
+    }
+    
+    void charger()
+    {
+    
     
     }
+    
     
     double devisBatiment() //float ?
     {
