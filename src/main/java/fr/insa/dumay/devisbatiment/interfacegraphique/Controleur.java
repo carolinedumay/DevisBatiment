@@ -118,7 +118,9 @@ public class Controleur {
     
     void boutonGrouper(ActionEvent t){
         if (this.etat == 20 && this.selection.size() >1){
+      //      Groupe ssGroupe = this.vue.getModel().sousGroupe(selection);
             this.selection.clear();
+       //     this.selection.add(ssGroupe);
             this.vue.redrawAll();
         }
     }
@@ -126,6 +128,7 @@ public class Controleur {
     void changeColor(Color value){ //idem par rapport à la couleur jsp quoi en faire
         if (this.etat == 20&& this.selection.size() > 0){
             for (Figure f : this.selection){
+         //       f.changeCouleur(value);
             }
             this.vue.redrawAll();
         }
