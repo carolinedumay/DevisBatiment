@@ -28,7 +28,7 @@
                 <goal>org.codehaus.mojo:exec-maven-plugin:3.1.0:exec</goal>
             </goals>
             <properties>
-                <exec.vmArgs></exec.vmArgs>
+                <exec.vmArgs>--module-path /path/to/javafx-sdk-20/lib --add-modules javafx.controls,javafx.fxml</exec.vmArgs>
                 <exec.args>${exec.vmArgs} -classpath %classpath ${exec.mainClass} ${exec.appArgs}</exec.args>
                 <exec.appArgs></exec.appArgs>
                 <exec.mainClass>fr.insa.dumay.devisbatiment.interfacegraphique.Main</exec.mainClass>
@@ -44,11 +44,12 @@
             <goals>
                 <goal>clean</goal>
                 <goal>javafx:run</goal>
+                
             </goals>
             <properties>
                 <exec.vmArgs></exec.vmArgs>
                 <exec.args>${exec.vmArgs} -classpath %classpath ${exec.mainClass} ${exec.appArgs}</exec.args>
-                <exec.mainClass>${packageClassName}</exec.mainClass>
+                <exec.mainClass>fr.insa.dumay.devisbatiment.interfacegraphique.Main</exec.mainClass>
                 <exec.executable>java</exec.executable>
                 <exec.appArgs></exec.appArgs>
             </properties>

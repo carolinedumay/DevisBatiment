@@ -9,13 +9,13 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>20</maven.compiler.source>
         <maven.compiler.target>20</maven.compiler.target>
-        <exec.mainClass>fr.insa.dumay.devisbatiment.DevisBatiment</exec.mainClass>
+        <exec.mainClass>fr.insa.dumay.devisbatiment.interfacegraphique.Main</exec.mainClass>
     </properties>
     <dependencies>
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-controls</artifactId>
-            <version>19</version>
+            <version>20</version>
         </dependency>
     </dependencies>
     <build>
@@ -25,9 +25,9 @@
         <artifactId>maven-compiler-plugin</artifactId> 
         <version>3.11.0</version>
         <configuration>
-            <release>19</release>
+            <release>20</release>
         </configuration>
-    </plugin> 
+    </plugin>
     <plugin>
         <groupId>org.openjfx</groupId> 
         <artifactId>javafx-maven-plugin</artifactId> 
