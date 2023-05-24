@@ -20,12 +20,13 @@ public class Main extends Application {
     public void start(Stage stage) {
         var javaVersion = System.getProperty("java.version");
         var javafxVersion = System.getProperty("javafx.version");
-
+      
         var label = new Label("Hello, JavaFX " + javafxVersion + ", running on Java " + javaVersion + ".");
         //var scene = new Scene(new StackPane(label), 640, 480);
-        Scene scene = new Scene(new MainPane(), 800,600);//format de la fenetre : 800x600
+        Scene scene = new Scene(new FOuverture(stage), 800,600);//format de la fenetre : 800x600
         stage.setScene(scene);
           stage.show();
+          stage.setTitle("aaaaaaaaaaaaaaaaaaaaaaaaaaaa");
     }
 
     public static void main(String[] args) {
