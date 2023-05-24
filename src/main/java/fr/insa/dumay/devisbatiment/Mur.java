@@ -25,6 +25,7 @@ public class Mur {
         this.idMur=id;
         this.debut=dc;
         this.fin=fc;
+        this.listeRevetements = new ArrayList<Revêtement>();
     }
     
   /*  void afficher()

@@ -18,10 +18,10 @@ public class Sol {
     ArrayList<Revêtement> listeRevetements;
     
     // Constructeur
-    public Sol(int id, ArrayList<Coin> coins, ArrayList<Revêtement> revetements) {
+    public Sol(int id, ArrayList<Coin> coins/*, ArrayList<Revêtement> revetements*/) {
         this.idSol = id;
         this.listeCoin = coins;
-        this.listeRevetements = revetements;
+        this.listeRevetements = new ArrayList<Revêtement>();
     }
     
     double prixrevetement_s()
