@@ -8,7 +8,7 @@ import javafx.scene.canvas.GraphicsContext;
 
 /**
  *
- * @author juliette
+ * @author julietteee
  */
 public abstract class Figure {
     

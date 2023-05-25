@@ -17,7 +17,7 @@ import javafx.stage.Stage;
 
 /**
  *
- * @author juliette
+ * @author julietteeee
  */
 
 public class FAccueil extends BorderPane {

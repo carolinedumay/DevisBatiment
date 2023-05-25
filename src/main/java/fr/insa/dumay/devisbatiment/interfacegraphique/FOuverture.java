@@ -12,7 +12,7 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 /**
  *
- * @author juliette
+ * @author julietteeee
  */
 public class FOuverture extends BorderPane {
     //Stage test;

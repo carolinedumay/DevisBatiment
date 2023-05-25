@@ -15,7 +15,7 @@ import javafx.scene.layout.VBox;
 
 /**è
  *
- * @author juliette
+ * @author julietteeeee
  */
 public class MainPane extends BorderPane {
 

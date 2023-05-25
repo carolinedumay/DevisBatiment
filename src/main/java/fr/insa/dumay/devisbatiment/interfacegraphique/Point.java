@@ -9,7 +9,7 @@ import javafx.scene.canvas.GraphicsContext;
 
 /**
  *
- * @author juliette
+ * @author julietteeee
  */
 public class Point extends FigureSimple {
     

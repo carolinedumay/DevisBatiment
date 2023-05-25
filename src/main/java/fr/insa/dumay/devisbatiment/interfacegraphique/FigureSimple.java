@@ -6,7 +6,7 @@ package fr.insa.dumay.devisbatiment.interfacegraphique;
 
 /**
  *
- * @author juliette
+ * @author julietteeee
  */
 public abstract class FigureSimple { //abstract car aucun
     

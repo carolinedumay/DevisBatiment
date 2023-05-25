@@ -10,7 +10,7 @@ import javafx.scene.canvas.GraphicsContext;
 
 /**
  *
- * @author juliette
+ * @author julietteee
  */
 public class Groupe extends Figure {
     
