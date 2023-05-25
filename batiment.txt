@@ -10,5 +10,5 @@ Mur;3;3;4;0;0
 Mur;4;4;1;0;0
 Piece;1;1;1;1;2;3;4
 Appartement;1;1;1
-Niveau;2;1.0;1
+Niveau;1;1.0;1
 Batiment;ze;2
