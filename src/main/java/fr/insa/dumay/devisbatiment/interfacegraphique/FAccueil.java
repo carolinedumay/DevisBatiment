@@ -59,16 +59,16 @@ public class FAccueil extends BorderPane {
         HBox hbox3 = new HBox();
         hbox3.getChildren().addAll(LongueurLabel,textLongueur);
         
-        Button buttonTest = new Button("Test");
-        buttonTest.setOnAction(e ->{
-            Test test = new Test();
-            test.show();
+        Button buttonCreerMur = new Button("Créer un mur");
+        buttonCreerMur.setOnAction(e ->{
+            FCreerMur creermur = new FCreerMur();
+            creermur.show();
         });
         
         
         
         VBox vbox = new VBox();
-        vbox.getChildren().addAll(hbox1,hbox2,hbox3, buttonTest);
+        vbox.getChildren().addAll(hbox1,hbox2,hbox3, buttonCreerMur);
         vbox.setPadding(new Insets(10));
         
         StackPane stackPane = new StackPane();
