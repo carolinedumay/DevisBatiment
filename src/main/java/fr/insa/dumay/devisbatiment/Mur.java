@@ -54,6 +54,11 @@ public class Mur {
         }
        return prix; 
     }
+
+    @Override
+    public String toString() {
+        return "Mur{" + "idMur=" + idMur + ", debut=" + debut + ", fin=" + fin + ", nbPortes=" + nbPortes + ", nbFenetres=" + nbFenetres + ", listeRevetements=" + listeRevetements + '}';
+    }
     
     /**DESSINER SEGMENT (MUR)
      * voir classe segment du prof

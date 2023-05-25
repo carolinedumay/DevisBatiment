@@ -66,6 +66,7 @@ public class DevisBatiment {
          System.out.println(f);
          System.out.println(p);
 */
+         /*
          Coin a,b,c,d;
          a = new Coin(1,2,1);
          b = new Coin(2,4,1);
@@ -107,12 +108,16 @@ public class DevisBatiment {
          System.out.println(P);
          LA.add(A);
         // P.add(new Piece(1, new Sol()));
-         Niveau N = new Niveau(2,1,LA);
+         Niveau N = new Niveau(1,1,LA);
          System.out.print(LA);
          
          B.listeNiveaux.add(N);
          System.out.println(B);
          B.sauvegarder();
+        */
+         Batiment B = new Batiment("dz");
+         B.charger();
+         System.out.print(B);
                
     }
  }
