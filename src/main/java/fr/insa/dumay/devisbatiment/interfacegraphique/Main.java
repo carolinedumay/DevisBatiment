@@ -24,7 +24,7 @@ public class Main extends Application {
       
         var label = new Label("Hello, JavaFX " + javafxVersion + ", running on Java " + javaVersion + ".");
         //var scene = new Scene(new StackPane(label), 640, 480);
-        Scene scene = new Scene(new FOuverture(), 800,600);//format de la fenetre : 800x600
+        Scene scene = new Scene(new MainPane(), 800,600);//format de la fenetre : 800x600
         stage.setScene(scene);
         stage.setTitle("azdqsxq");
           stage.show();
