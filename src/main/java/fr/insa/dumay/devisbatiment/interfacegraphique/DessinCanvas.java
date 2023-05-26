@@ -42,10 +42,10 @@ public class DessinCanvas extends Pane {
     
     public void redrawAll(){ //on va surement avoir besoin de redessiner si on change la taille du canvas 
         GraphicsContext context = this.realCanvas.getGraphicsContext2D(); //c'est GraphicsContext qui va me servir à dessiner
-        //context.setFill(Color.PURPLE); //colorier en rouge
-        //context.fillRect(0,500,this.getWidth(),this.getHeight()); // coord 0 et 1 : (0,0) : coin haut gauche de la fenetre ; coord 2 et 3 : taille en x et en y
-        Groupe model = this.main.getModel(); //accéder aux figures au travers le panneau principal
-        model.dessine(context);
+        context.setFill(Color.PURPLE); //colorier en rouge
+        context.fillRect(0,500,this.getWidth(),this.getHeight()); // coord 0 et 1 : (0,0) : coin haut gauche de la fenetre ; coord 2 et 3 : taille en x et en y
+        //Groupe model = this.main.getModel(); //accéder aux figures au travers le panneau principal
+       // model.dessine(context);
     }
             
 }
