@@ -10,6 +10,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
 import java.io.*;
+import javafx.scene.Parent;
 /**
  *
  * @author julietteeee
@@ -24,7 +25,8 @@ public class Main extends Application {
       
         var label = new Label("Hello, JavaFX " + javafxVersion + ", running on Java " + javaVersion + ".");
         //var scene = new Scene(new StackPane(label), 640, 480);
-        Scene scene = new Scene(new MainPane(), 800,600);//format de la fenetre : 800x600
+        
+        Scene scene = new Scene(MainPane(), 800,600);//format de la fenetre : 800x600
         stage.setScene(scene);
         stage.setTitle("azdqsxq");
           stage.show();
@@ -77,5 +79,9 @@ public class Main extends Application {
         {
             System.out.println("erreur de lecture du fichier");
         }
+    }
+
+    private Parent MainPane() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 }
