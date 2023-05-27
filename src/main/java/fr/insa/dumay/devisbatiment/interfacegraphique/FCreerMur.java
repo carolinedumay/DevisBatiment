@@ -133,5 +133,6 @@ public class FCreerMur extends Stage {
         System.out.println("Erreur lors de la lecture du fichier de revêtements : " + e.getMessage());
         }
         return revet;
+
     }
 }

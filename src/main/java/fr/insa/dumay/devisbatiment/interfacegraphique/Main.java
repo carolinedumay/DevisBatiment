@@ -10,6 +10,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
 import java.io.*;
+import javafx.scene.paint.Color;
 //import javafx.scene.Parent;
 /**
  *
@@ -26,13 +27,32 @@ public class Main extends Application {
         var label = new Label("Hello, JavaFX " + javafxVersion + ", running on Java " + javaVersion + ".");
         //var scene = new Scene(new StackPane(label), 640, 480);
         
-        Scene scene = new Scene(new MainPane(), 800,600);//format de la fenetre : 800x600
+        
+        Scene scene = new Scene(new MainPane1(), 800,600);//format de la fenetre : 800x600
         stage.setScene(scene);
-        stage.setTitle("azdqsxq");
-          stage.show();
-          stage.setTitle("aaaaaaaaaaaaaaaaaaaaaaaaaaaa");
+        stage.setTitle("Devis de votre batiment");
+        stage.show();
+          
+        FAccueil fenetreAccueil = new FAccueil(); // création de l'instance de la classe FAccueil
+        Stage fenetreAccueilStage = new Stage(); 
+        Scene fenetreAccueilScene = new Scene(fenetreAccueil, 400, 300); 
+        fenetreAccueilStage.setScene(fenetreAccueilScene);
+        fenetreAccueilStage.setTitle("Bienvenue");
+        //fenetreAccueilStage.initOwner(stage); // Définir le propriétaire de la fenêtre FenetreAccueil
+        fenetreAccueilStage.showAndWait(); // Afficher la fenêtre FenetreAccueil en attendant qu'elle soit fermée
+          
+        
     }
 
+    
+    
+    
+    
+    
+    
+    
+    
+    
     public static void main(String[] args) {
         launch();
         

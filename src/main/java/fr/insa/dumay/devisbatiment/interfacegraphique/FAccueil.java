@@ -33,50 +33,13 @@ public class FAccueil extends BorderPane {
         
         // Création des boutons fenetre et porte
         Label PhraseLabel = new Label("Bienvenue dans l'interface pour réaliser le devis de votre futur bâtiment.");
-        Label NiveauLabel = new Label("Nombre de niveau :");
-        Label LargeurLabel = new Label("Largeur du bâtiment :");
-        Label LongueurLabel = new Label("Longueur du bâtiment");
-        
-        
-        // Champ de texte pour saisir le nombre d'ouverture
-        TextField textNiveau = new TextField();
-        textNiveau.setPromptText("");
-        
-        TextField textLargeur = new TextField();
-        textLargeur.setPromptText("");
-        
-        TextField textLongueur = new TextField();
-        textLongueur.setPromptText("");
-        
-        //mise en place
-        
-        HBox hbox1 = new HBox();
-        hbox1.getChildren().addAll(NiveauLabel,textNiveau);
-        
-        HBox hbox2 = new HBox();
-        hbox2.getChildren().addAll(LargeurLabel,textLargeur);
-        
-        HBox hbox3 = new HBox();
-        hbox3.getChildren().addAll(LongueurLabel,textLongueur);
-        
-        Button buttonCreerMur = new Button("Créer un mur");
-        buttonCreerMur.setOnAction(e ->{
-            FCreerMur creermur = new FCreerMur();
-            creermur.show();
-        });
-        
-        
-        
-        VBox vbox = new VBox();
-        vbox.getChildren().addAll(hbox1,hbox2,hbox3, buttonCreerMur);
-        vbox.setPadding(new Insets(10));
         
         StackPane stackPane = new StackPane();
         stackPane.getChildren().add(PhraseLabel);
         StackPane.setAlignment(PhraseLabel, Pos.TOP_CENTER);
         
         this.setTop(stackPane);
-        this.setCenter(vbox);
+        stackPane.setPadding(new Insets(10));
         
         
         
