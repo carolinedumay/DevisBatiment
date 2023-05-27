@@ -75,10 +75,16 @@ public class FCreerMur extends Stage {
         
         //menu déroulant
        List<String> revet = loadTextData("prixUnitaire2.txt");
-        ComboBox<String> revetbox = new ComboBox<>();
-        revetbox.getItems().addAll(revet);
-        revetbox.setOnAction(event -> {
-            String selectedValue = revetbox.getValue();
+        ComboBox<String> revetboxI = new ComboBox<>();
+        revetboxI.getItems().addAll(revet);
+        revetboxI.setOnAction(event -> {
+            String selectedValue = revetboxI.getValue();
+            System.out.println("Choix : " + selectedValue);
+            });
+        ComboBox<String> revetboxE = new ComboBox<>();
+        revetboxE.getItems().addAll(revet);
+        revetboxE.setOnAction(event -> {
+            String selectedValue = revetboxE.getValue();
             System.out.println("Choix : " + selectedValue);
             });
         
@@ -106,8 +112,8 @@ public class FCreerMur extends Stage {
         HBox hbox04 = new HBox();
         hbox04.getChildren().addAll(sep);
         HBox hbox7 = new HBox();
-        hbox7.getChildren().addAll(ri, revetbox, re, revetbox);
-        
+        hbox7.getChildren().addAll(ri, revetboxI, re, revetboxE);
+       
         //affichage final
         VBox vbox = new VBox();
         vbox.getChildren().addAll(hbox0,hbox01,hbox1,hbox2,hbox02,hbox3,hbox4, hbox03, hbox5, hbox6, hbox04, hbox7);
@@ -121,7 +127,7 @@ public class FCreerMur extends Stage {
     //fonction pour menu déroulant
     private List<String> loadTextData(String prixUnitaire2) {
         List<String> revet = new ArrayList<>();
-        try (BufferedReader reader = new BufferedReader(new FileReader("prixUnitaire2.txt"))) {
+        try (BufferedReader reader = new BufferedReader(new FileReader("prixUnitaires2.txt"))) {
             String line;
             while ((line = reader.readLine()) != null) {
                 String[] columns = line.split(";");
