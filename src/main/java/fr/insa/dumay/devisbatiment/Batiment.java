@@ -33,7 +33,7 @@ public class Batiment {
     {
          try
         {
-        BufferedWriter batiment=new BufferedWriter(new FileWriter("batiment.txt",false));
+        BufferedWriter batiment=new BufferedWriter(new FileWriter(this.idBatiment,false));
         ////Batiment////
         
         ////Niveaux////
@@ -164,7 +164,7 @@ public class Batiment {
         
         try
         {
-            BufferedReader batiment=new BufferedReader(new FileReader("batiment.txt"));
+            BufferedReader batiment=new BufferedReader(new FileReader(this.idBatiment));
             String Ligne;
             while((Ligne=batiment.readLine())!=null)
                     {   
