@@ -12,7 +12,7 @@ import javafx.scene.paint.*;
 
 /**
  *
- * @author julietteee
+ * @author julietteeee
  */
 public class Controleur {
     
