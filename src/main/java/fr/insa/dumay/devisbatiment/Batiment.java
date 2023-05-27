@@ -179,7 +179,7 @@ public class Batiment {
                         ///Coin///
                         if(P1[0].equals("Coin"))
                         {
-                            C.add((Integer.parseInt(P1[1])-1), new Coin(Integer.parseInt(P1[1]),Double.parseDouble(P1[2]),Double.parseDouble(P1[3])));
+                            C.add( new Coin(Integer.parseInt(P1[1]),Double.parseDouble(P1[2]),Double.parseDouble(P1[3])));
                         }
                         ///Coin///
                         
@@ -207,7 +207,7 @@ public class Batiment {
                                     }
                                 }
                             }
-                            S.add((Integer.parseInt(P1[1])-1),sol);
+                            S.add(sol);
                         }
                         ///Sol///
                         
@@ -235,7 +235,7 @@ public class Batiment {
                                     }
                                 }
                             }
-                            Pla.add((Integer.parseInt(P1[1])-1),plafond);
+                            Pla.add(plafond);
                         }
                         ///Plafond///
                         
@@ -273,7 +273,7 @@ public class Batiment {
                             }
                             
                             
-                            M.add((Integer.parseInt(P1[1])-1),mur);
+                            M.add(mur);
                         }
                         ///Mur///
                            
@@ -310,7 +310,7 @@ public class Batiment {
                                  }
                             }
                             
-                            P.add((Integer.parseInt(P1[1])-1), piece);
+                            P.add( piece);
                         }
                         ///Piece///
                         
@@ -330,7 +330,7 @@ public class Batiment {
                                  }
                             }
                             
-                            A.add((Integer.parseInt(P1[1])-1), appart);
+                            A.add(appart);
                         }
                         ///Appartement///
                         
@@ -350,7 +350,7 @@ public class Batiment {
                                 }
                             }
                             
-                            N.add((Integer.parseInt(P1[1])-1), niveau);
+                            N.add( niveau);
                         }
                         ///Niveau///
                         
