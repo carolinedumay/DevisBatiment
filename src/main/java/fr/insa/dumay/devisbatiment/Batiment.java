@@ -343,7 +343,7 @@ public class Batiment {
                             {
                                 for(Appartement a : A)
                                 {
-                                    if(a.idAppartement == Integer.parseInt(P1[i]))
+                                    if((a.idAppartement == Integer.parseInt(P1[i]))&&(a.idNiveauAppartement ==niveau.idNiveau))
                                     {
                                         niveau.listeappartements.add(a);
                                     }
