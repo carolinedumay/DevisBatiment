@@ -50,7 +50,8 @@ public class Mur {
         double prix = 0;
         for(int i = 0; i<listeRevetements.size();i++)
         {  
-            prix += this.listeRevetements.get(0).prixUnitaire*this.surface();
+            prix += this.listeRevetements.get(0).prixUnitaire*this.surface(); 
+            //prix += this.listeRevetements.get(i).prixUnitaire*this.longueur();
         }
        return prix; 
     }

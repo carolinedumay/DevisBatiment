@@ -42,9 +42,26 @@ public class Niveau {
     
     double montantRevetement()//somme du prix de tous les revêtements de nivaux
     {
+      
       double prix = 0;
        for (Appartement appartements : listeappartements){
-       prix += appartements.montantRevetement();
+           for(Piece piece: appartements.listePieces)
+           {
+               for(Mur mur : piece.listeMurs)
+               {
+                   for(Revêtement R : mur.listeRevetements)
+                   {
+                       prix+= (mur.longueur()*R.prixUnitaire)- (mur.nbPortes*(new Porte(0).surface())) - (mur.nbFenetres*(new Fenetre(0).surface()));
+                   }
+                   
+               }
+               prix += piece.plafond.prixrevetement_p();
+               prix += piece.sol.prixrevetement_s();
+           }
+           
+           
+           
+       //prix += appartements.montantRevetement();
        }
        return prix;
     }
