@@ -279,16 +279,128 @@ public class DevisBatiment {
         
         
      }
+
+    public static int ChoixPiece(Batiment batiment, int Niveau)
+    {
+        if(batiment.listeNiveaux.isEmpty())
+        {
+            System.out.println(" Il n'y a pas de Niveau disponible");
+            return -1;
+        }
+        if(batiment.listeNiveaux.get(Niveau).listeappartements.get(0).listePieces.isEmpty())
+        {
+            System.out.println(" Il n'y a pas de Piece disponible");
+            return -1;
+        }
+        for(Piece piece : batiment.listeNiveaux.get(Niveau).listeappartements.get(0).listePieces)
+        {
+            System.out.println(piece);
+        }
+        System.out.println("Entrez l'indice de la piece choisi");
+        int id = Lire.i();
+        Boolean IDValid = false;
+        while(!(IDValid))
+        {    
+            for(Piece piece: batiment.listeNiveaux.get(Niveau).listeappartements.get(0).listePieces)
+            {
+                if(id==piece.idPiece)
+                {
+                    System.out.println("La piece "+id+" a été choisi");
+                    return batiment.listeNiveaux.get(Niveau).listeappartements.get(0).listePieces.indexOf(piece);
+                }
+            }
+            System.out.println("Entrez un indice indice valide");
+            id = Lire.i();
+        }
+        return 0;
+    }
     
+        public static int ChoixMur(Batiment batiment, int Niveau, int Piece)
+    {
+        if(batiment.listeNiveaux.isEmpty())
+        {
+            System.out.println(" Il n'y a pas de Niveau disponible");
+            return -1;
+        }
+        if(batiment.listeNiveaux.get(Niveau).listeappartements.get(0).listePieces.isEmpty())
+        {
+            System.out.println(" Il n'y a pas de Piece disponible");
+            return -1;
+        }
+        if(batiment.listeNiveaux.get(Niveau).listeappartements.get(0).listePieces.get(Piece).listeMurs.isEmpty())
+        {
+            System.out.println(" Il n'y a pas de Mur disponible");
+            return -1;
+        }
+        for(Mur mur : batiment.listeNiveaux.get(Niveau).listeappartements.get(0).listePieces.get(Piece).listeMurs)
+        {
+            System.out.println(mur);
+        }
+        System.out.println("Entrez l'indice du Mur choisi");
+        int id = Lire.i();
+        Boolean IDValid = false;
+        while(!(IDValid))
+        {    
+            for(Mur mur : batiment.listeNiveaux.get(Niveau).listeappartements.get(0).listePieces.get(Piece).listeMurs)
+            {
+                if(id==mur.idMur)
+                {
+                    System.out.println("Le mur "+id+" a été choisi");
+                    return batiment.listeNiveaux.get(Niveau).listeappartements.get(0).listePieces.get(Piece).listeMurs.indexOf(mur);
+                }
+            }
+            System.out.println("Entrez un indice indice valide");
+            id = Lire.i();
+        }
+        return 0;
+    }
+    
+    public static Revêtement ChoixRevet(String type, ArrayList<Revêtement> r)
+    {
+        System.out.println();
+        for(Revêtement revet : r)
+        {
+            if(((type.equals("Sol"))&& (revet.pourSol==true))||((type.equals("Plafond"))&& (revet.pourPlafond==true)))
+            {
+                System.out.println(revet);
+            }
+        }
+        System.out.println("Entrez l'indice du Revêtement choisi");
+        int id = Lire.i();
+        Boolean IDValid = false;
+        while(!(IDValid))
+        {    
+            for(Revêtement revet : r)
+            {
+                if(((type.equals("Sol"))&& (revet.pourSol==true))||((type.equals("Plafond"))&& (revet.pourPlafond==true)))
+                {
+                    if(id==revet.idRevetement)
+                    {
+                       System.out.println(" "+revet.designation +" a été choisi");
+                       return revet;
+                    }
+                }
+            }
+            System.out.println("Entrez un indice indice valide");
+            id = Lire.i();
+        }
+        return null;
+    }
     
     public static void main(String[] args) {
         
         Batiment batiment = new Batiment("Nouveau",new ArrayList<Niveau>());
+        Revêtement Revet;
+        ArrayList<Revêtement> R = Revêtement.lireRevêtements();
+        
         Boolean Exit = false;
         Boolean MenuChange = true;
         
         int Menu = 0;
         int PosNiveau = 0;// refert à la position du niveau dans la liste du batiment
+        int PosPieceChoisi = 0;
+        int PosMurChoisi = 0;
+                
         int Interaction;
         int IndiceMinCoin = 0;
         int IndiceMinMur = 0;
@@ -326,7 +438,28 @@ public class DevisBatiment {
                     switch(Interaction)
                     {
                         case 0:
+                            
                             batiment = Charger(batiment);
+                            IndiceMinCoin = 0;//on remet ces valeurs à zéro pour qu'après les opérations suivantes les valeurs ne soient pas trop élevés
+                            IndiceMinMur = 0;
+                            IndiceMinSol = 0;
+                            IndiceMinPlafond = 0;
+                            for(Niveau niveau : batiment.listeNiveaux)
+                            {
+                                for(Piece piece : niveau.listeappartements.get(0).listePieces)
+                                {
+                                    for(Coin coin : piece.sol.listeCoin)
+                                    {
+                                        IndiceMinCoin +=1;
+                                    }
+                                    for(Mur mur : piece.listeMurs)
+                                    {
+                                        IndiceMinMur+=1;
+                                    }
+                                    IndiceMinSol+=1;
+                                    IndiceMinPlafond+=1;
+                                }
+                            }
                             //System.out.print(batiment);
                             break;
                         case 1:
@@ -337,6 +470,12 @@ public class DevisBatiment {
                             MenuChange=true;
                             break;
                         case 3:
+                            PosPieceChoisi = ChoixPiece(batiment,PosNiveau);
+                            if(PosPieceChoisi<0)
+                            {
+                                MenuChange=true;
+                                break;
+                            }
                             Menu = 4;
                             MenuChange=true;
                             break;
@@ -536,6 +675,7 @@ public class DevisBatiment {
                             MenuChange =true;
                             break;
                         case 3:
+                            
                             break;
                         case 4:
                             
@@ -564,14 +704,28 @@ public class DevisBatiment {
                     switch(Interaction)
                     {
                         case 0:
+                            PosMurChoisi = ChoixMur(batiment,PosNiveau,PosPieceChoisi);
+                            if(PosMurChoisi<0)
+                            {
+                                MenuChange=true;
+                                break;
+                            }
                             Menu = 5;
                             MenuChange=true;
                             break;
                         case 1:
                             //revetement plafond
+                            Revet = ChoixRevet("Plafond",R);
+                            batiment.listeNiveaux.get(PosNiveau).listeappartements.get(0).listePieces.get(PosPieceChoisi).plafond.listeRevetements.clear();
+                            batiment.listeNiveaux.get(PosNiveau).listeappartements.get(0).listePieces.get(PosPieceChoisi).plafond.listeRevetements.add(Revet);
+                            MenuChange=true;
                             break;
                         case 2:
                             //revetment sol
+                            Revet = ChoixRevet("Sol",R);
+                            batiment.listeNiveaux.get(PosNiveau).listeappartements.get(0).listePieces.get(PosPieceChoisi).sol.listeRevetements.clear();
+                            batiment.listeNiveaux.get(PosNiveau).listeappartements.get(0).listePieces.get(PosPieceChoisi).sol.listeRevetements.add(Revet);
+                            MenuChange=true;
                             break;
                         case 3:
                             //retour
