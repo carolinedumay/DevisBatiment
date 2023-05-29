@@ -10,7 +10,7 @@ import javafx.scene.paint.Color;
 
 /**
  *
- * @author juliette
+ * @author julietteeee
  */
 public class DessinCanvas extends Canvas{
     
