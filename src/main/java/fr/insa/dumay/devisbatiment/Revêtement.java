@@ -48,9 +48,9 @@ public class Revêtement {
                 {       
                 int id = Integer.parseInt(champs[0]);
                 String designation = champs[1];//champs : éléments contenus dans une ligne de texte du fichier
-                boolean pourMur = Boolean.parseBoolean(champs[2]);
-                boolean pourSol = Boolean.parseBoolean(champs[3]);
-                boolean pourPlafond = Boolean.parseBoolean(champs[4]);
+                boolean pourMur = ((Integer.parseInt(champs[2]))==1);
+                boolean pourSol = ((Integer.parseInt(champs[3]))==1);
+                boolean pourPlafond = ((Integer.parseInt(champs[4]))==1);
                 double prixUnitaire = Double.parseDouble(champs[5]);
                 Revêtement revetement = new Revêtement(id, designation, pourMur, pourSol, pourPlafond, prixUnitaire);
                 revetements.add(revetement);
