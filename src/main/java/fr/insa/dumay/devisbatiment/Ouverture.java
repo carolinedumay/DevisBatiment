@@ -23,12 +23,7 @@ public class Ouverture {
    // this.dimY=y;
     }
     
-    //Méthodes
-    void afficher()
-    {
-        //System.out.println(" Ouverture : id ="+this.idOuverture+" largueur = "+this.dimX+ " hauteur ="+this.dimY);
-    }
-        
+    //Méthodes       
     double surface()
     {
         return((this.dimX)*(this.dimY));
