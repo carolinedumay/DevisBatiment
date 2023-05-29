@@ -12,21 +12,21 @@ import javafx.scene.paint.Color;
  *
  * @author juliette
  */
-public class DessinCanvas1 extends Canvas{
+public class DessinCanvas extends Canvas{
     
-    public DessinCanvas1(){
+    public DessinCanvas(){
         setStyle("-fx-border-color: black");
     }
+    
     public void dessinerSegment(double x1, double y1, double x2, double y2) {
-        GraphicsContext gc = this.getGraphicsContext2D();
+        GraphicsContext gc = getGraphicsContext2D();
         gc.setStroke(Color.BLACK);
+        gc.setLineWidth(1.0);//épaisseur du trait
         gc.strokeLine(x1, y1, x2, y2);
     }
     
-    /*public void colorerZone(Color couleur) {
-        GraphicsContext gc = this.getGraphicsContext2D();
-        gc.setFill(couleur);
-        gc.fillRect(0, 0, getWidth(), getHeight());
+    
+    public DessinCanvas(double width, double height) {
+        super(width, height);
     }
-*/
 }
