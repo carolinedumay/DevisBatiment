@@ -26,10 +26,13 @@ public class FAccueil extends BorderPane {
     
     public FAccueil() {
        
-        /*//création du bouton fermer
-        Button closeButton = new Button("Fermer");
-        closeButton.setOnAction(event -> close());
-        */
+        Button saveButton = new Button("Continuer");
+        saveButton.setOnAction(event -> {
+  
+    // Fermer la fenêtre
+    Stage stage = (Stage) saveButton.getScene().getWindow();
+    stage.close();
+    });
         
         // Création des boutons fenetre et porte
         Label PhraseLabel = new Label("Bienvenue dans l'interface pour réaliser le devis de votre futur bâtiment.");
@@ -38,7 +41,12 @@ public class FAccueil extends BorderPane {
         stackPane.getChildren().add(PhraseLabel);
         StackPane.setAlignment(PhraseLabel, Pos.TOP_CENTER);
         
+        StackPane posok = new StackPane();
+        posok.getChildren().add(saveButton);
+        StackPane.setAlignment(saveButton, Pos.BOTTOM_RIGHT);
+        
         this.setTop(stackPane);
+        this.setBottom(posok);
         stackPane.setPadding(new Insets(10));
         
         

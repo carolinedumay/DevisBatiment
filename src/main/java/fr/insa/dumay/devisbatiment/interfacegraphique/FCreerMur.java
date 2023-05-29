@@ -12,6 +12,7 @@ import java.util.List;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
@@ -29,10 +30,15 @@ public class FCreerMur extends Stage {
     
     private TextField tfPx;
     private TextField tfPy;
+    private DessinCanvas dessinCanvas;
+    
+    public void setDessinCanvas(DessinCanvas dessinCanvas){
+        this.dessinCanvas = dessinCanvas;
+    }
     
     public FCreerMur(){
          
-        //phrases
+        //Phrases
         Label phrasedebut = new Label("Vous pouvez créer un mur.");
         Label p1 = new Label("Rentrez les coordonnées du point 1 :");
         Label ab1 = new Label("Abscisse :          ");
@@ -43,10 +49,12 @@ public class FCreerMur extends Stage {
         Label sep = new Label("----------------------------------------------------------");
         Label nbf = new Label("Quelle est le nombre de fenêtres sur ce mur ?        ");
         Label nbp = new Label("Quelle est le nombre de portes sur ce mur ?           ");
+        Label sep2 = new Label("----------------------------------------------------------");
         Label ri = new Label("Revêtement intérieur :");
         Label re = new Label("Revêtement extérieur :");
+        Label sep3 = new Label("----------------------------------------------------------");
         
-        //champs pour rentrer du texte
+        //Champs pour rentrer du texte
         TextField textab1 = new TextField();
         textab1.setPromptText("Rentrez votre valeur.");
         TextField texto1 = new TextField();
@@ -58,8 +66,31 @@ public class FCreerMur extends Stage {
         TextField textf = new TextField();
         textf.setPromptText("Rentrez votre valeur.");
         TextField textp = new TextField();
-        textp.setPromptText("Rentrez votre valeur.");
+        textp.setPromptText("Rentrez votre valeur.");  
         
+        //bouton OK
+        Button saveButton = new Button("OK");
+        saveButton.setOnAction(event -> {
+            try {
+               double x1 = Double.parseDouble(textab1.getText());
+              double y1 = Double.parseDouble(texto1.getText());
+              double x2 = Double.parseDouble(texta2.getText());
+              double y2 = Double.parseDouble(texto2.getText());
+
+        // Fermer la fenêtre
+        ((Stage) saveButton.getScene().getWindow()).close();
+
+            } catch (NumberFormatException e) {
+        
+            // Afficher un message d'erreur si les valeurs ne sont pas valides
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Erreur");
+            alert.setHeaderText("Valeurs non valides");
+            alert.setContentText("Les valeurs des champs de texte ne sont pas valides.");
+            alert.showAndWait();
+            }
+        });
+
         //positionnement de certaines fenêtres
         StackPane posph1 = new StackPane();
         posph1.getChildren().add(phrasedebut);
@@ -72,6 +103,10 @@ public class FCreerMur extends Stage {
         StackPane posp2 = new StackPane();
         posp2.getChildren().add(p2);
         StackPane.setAlignment(p2, Pos.CENTER_LEFT);
+        
+        StackPane posok = new StackPane();
+        posok.getChildren().add(saveButton);
+        StackPane.setAlignment(saveButton, Pos.BOTTOM_RIGHT);
         
         //menu déroulant
        List<String> revet = loadTextData("prixUnitaire2.txt");
@@ -110,20 +145,25 @@ public class FCreerMur extends Stage {
         HBox hbox6 = new HBox();
         hbox6.getChildren().addAll(nbp,textp);
         HBox hbox04 = new HBox();
-        hbox04.getChildren().addAll(sep);
+        hbox04.getChildren().addAll(sep2);
         HBox hbox7 = new HBox();
         hbox7.getChildren().addAll(ri, revetboxI, re, revetboxE);
+        HBox hbox8= new HBox(posok);
+        hbox8.setAlignment(Pos.BOTTOM_RIGHT);
+        HBox hbox05 = new HBox();
+        hbox05.getChildren().addAll(sep3);
        
         //affichage final
         VBox vbox = new VBox();
-        vbox.getChildren().addAll(hbox0,hbox01,hbox1,hbox2,hbox02,hbox3,hbox4, hbox03, hbox5, hbox6, hbox04, hbox7);
+        vbox.getChildren().addAll(hbox0,hbox01,hbox1,hbox2,hbox02,hbox3,hbox4, hbox03, hbox5, hbox6, hbox04, hbox7,hbox05, hbox8);
         vbox.setPadding(new Insets(10));
         
         //affichage fenêtre
-        Scene scene = new Scene(vbox,500,300);
+        Scene scene = new Scene(vbox,700,350);
         this.setScene(scene);
         this.setTitle("Créer un mur");
     }
+    
     //fonction pour menu déroulant
     private List<String> loadTextData(String prixUnitaire2) {
         List<String> revet = new ArrayList<>();

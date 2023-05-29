@@ -14,14 +14,49 @@ import javafx.scene.layout.VBox;
  *
  * @author juliette
  */
+
 public class MainPane1 extends BorderPane{
     
-   private DessinCanvas1 dessin = new DessinCanvas1();
+   private DessinCanvas dessin;
+
+    public MainPane1() {
+        dessin = new DessinCanvas(USE_PREF_SIZE, USE_PREF_SIZE);
+        setRight(dessin);
+
+        Button buttonCreerMur = new Button("Créer un mur");
+        buttonCreerMur.setOnAction(e -> {
+            FCreerMur creermur = new FCreerMur();
+            creermur.setDessinCanvas(dessin); // Passer l'instance de DessinCanvas à FCreerMur
+            creermur.show();
+        });
+
+        VBox vbox = new VBox(buttonCreerMur);
+        vbox.setPadding(new Insets(10));
+
+        setTop(vbox);
+    }
+
+    public void dessinerSegment(double x1, double y1, double x2, double y2) {
+        dessin.dessinerSegment(x1, y1, x2, y2);
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    /**private DessinCanvas dessin = new DessinCanvas();
 
     public MainPane1() {
         
         
-        DessinCanvas1 dessin = new DessinCanvas1();
+        DessinCanvas dessin = new DessinCanvas();
         setRight(dessin);
         
         Button buttonCreerMur = new Button("Créer un mur");
@@ -39,4 +74,5 @@ public class MainPane1 extends BorderPane{
     Object getDessinCanvas() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
+    */
 }
