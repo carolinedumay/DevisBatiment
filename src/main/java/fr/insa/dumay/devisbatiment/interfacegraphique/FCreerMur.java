@@ -72,10 +72,12 @@ public class FCreerMur extends Stage {
         Button saveButton = new Button("OK");
         saveButton.setOnAction(event -> {
             try {
-               double x1 = Double.parseDouble(textab1.getText());
-              double y1 = Double.parseDouble(texto1.getText());
-              double x2 = Double.parseDouble(texta2.getText());
-              double y2 = Double.parseDouble(texto2.getText());
+                double x1 = Double.parseDouble(textab1.getText());
+                double y1 = Double.parseDouble(texto1.getText());
+                double x2 = Double.parseDouble(texta2.getText());
+                double y2 = Double.parseDouble(texto2.getText());
+                MainPane1.getCanvas().dessinerSegment(x1, y1, x2, y2);
+
 
         // Fermer la fenêtre
         ((Stage) saveButton.getScene().getWindow()).close();

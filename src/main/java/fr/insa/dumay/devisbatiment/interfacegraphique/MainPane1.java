@@ -17,10 +17,10 @@ import javafx.scene.layout.VBox;
 
 public class MainPane1 extends BorderPane{
     
-   private DessinCanvas dessin;
+    private static DessinCanvas dessin;
 
     public MainPane1() {
-        dessin = new DessinCanvas(USE_PREF_SIZE, USE_PREF_SIZE);
+        dessin = new DessinCanvas(650, 600);
         setRight(dessin);
 
         Button buttonCreerMur = new Button("Créer un mur");
@@ -38,6 +38,10 @@ public class MainPane1 extends BorderPane{
 
     public void dessinerSegment(double x1, double y1, double x2, double y2) {
         dessin.dessinerSegment(x1, y1, x2, y2);
+    }
+    
+    public static DessinCanvas getCanvas(){
+        return dessin;
     }
     
     

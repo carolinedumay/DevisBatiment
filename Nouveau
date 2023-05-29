@@ -1,0 +1,16 @@
+Appartement;0;1
+Niveau;1;2.0;0
+Coin;0;0.0;0.0
+Coin;1;2.0;0.0
+Coin;2;2.0;1.0
+Coin;3;0.0;1.0
+Sol;0;0;1;2;3
+Plafond;0;0;1;2;3
+Mur;0;0;1;0;0
+Mur;1;1;2;0;0
+Mur;2;2;3;0;0
+Mur;3;3;0;0;0
+Piece;1;0;0;0;1;2;3
+Appartement;0;2;1
+Niveau;2;3.0;0
+Batiment;Nouveau;1;2
