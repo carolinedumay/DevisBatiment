@@ -26,7 +26,7 @@ public class FAccueil extends BorderPane {
     
     public FAccueil() {
        
-        Button saveButton = new Button("OK");
+        Button saveButton = new Button("Continuer");
         saveButton.setOnAction(event -> {
   
     // Fermer la fenêtre

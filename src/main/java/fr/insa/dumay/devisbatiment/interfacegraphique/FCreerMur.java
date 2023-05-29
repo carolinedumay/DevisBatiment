@@ -70,32 +70,26 @@ public class FCreerMur extends Stage {
         
         //bouton OK
         Button saveButton = new Button("OK");
-saveButton.setOnAction(event -> {
-    try {
-        double x1 = Double.parseDouble(textab1.getText());
-        double y1 = Double.parseDouble(texto1.getText());
-        double x2 = Double.parseDouble(texta2.getText());
-        double y2 = Double.parseDouble(texto2.getText());
+        saveButton.setOnAction(event -> {
+            try {
+               double x1 = Double.parseDouble(textab1.getText());
+              double y1 = Double.parseDouble(texto1.getText());
+              double x2 = Double.parseDouble(texta2.getText());
+              double y2 = Double.parseDouble(texto2.getText());
 
-        // Utilisez les valeurs x1, y1, x2, y2 comme vous le souhaitez
-        // par exemple, créez des objets Point ou utilisez-les dans votre DessinCanvas
-
-        // Fermer la fenêtre après avoir récupéré les coordonnées des points
+        // Fermer la fenêtre
         ((Stage) saveButton.getScene().getWindow()).close();
 
-    } catch (NumberFormatException e) {
-        // Afficher un message d'erreur si les valeurs ne sont pas valides
-        Alert alert = new Alert(Alert.AlertType.ERROR);
-        alert.setTitle("Erreur");
-        alert.setHeaderText("Valeurs non valides");
-        alert.setContentText("Les valeurs des champs de texte ne sont pas valides.");
-        alert.showAndWait();
-    }
-});
-
-
-
-
+            } catch (NumberFormatException e) {
+        
+            // Afficher un message d'erreur si les valeurs ne sont pas valides
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Erreur");
+            alert.setHeaderText("Valeurs non valides");
+            alert.setContentText("Les valeurs des champs de texte ne sont pas valides.");
+            alert.showAndWait();
+            }
+        });
 
         //positionnement de certaines fenêtres
         StackPane posph1 = new StackPane();
@@ -165,7 +159,7 @@ saveButton.setOnAction(event -> {
         vbox.setPadding(new Insets(10));
         
         //affichage fenêtre
-        Scene scene = new Scene(vbox,500,350);
+        Scene scene = new Scene(vbox,700,350);
         this.setScene(scene);
         this.setTitle("Créer un mur");
     }
