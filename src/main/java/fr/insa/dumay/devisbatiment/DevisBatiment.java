@@ -512,9 +512,11 @@ public class DevisBatiment {
                                 }
                             }
                             //System.out.print(batiment);
+                            MenuChange =true;
                             break;
                         case 1:
                             Sauvegarder(batiment);
+                            MenuChange=true;
                             break;
                         case 2:
                             Menu = 1;
