@@ -51,7 +51,7 @@ public class Niveau {
                {
                    for(Revêtement R : mur.listeRevetements)
                    {
-                       prix+= (mur.longueur()*R.prixUnitaire)- (mur.nbPortes*(new Porte(0).surface())) - (mur.nbFenetres*(new Fenetre(0).surface()));
+                       prix+= (mur.longueur()*R.prixUnitaire*hauteurSousPlafond)- (mur.nbPortes*(new Porte(0).surface())) - (mur.nbFenetres*(new Fenetre(0).surface()));
                    }
                    
                }
